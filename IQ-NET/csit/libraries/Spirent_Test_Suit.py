@@ -261,7 +261,6 @@ def Spirent_EPN_Unicast_Traffic_Testing():
 	if (status == '0') :
 		print("run sth.traffic_control failed")
 	#print(traffic_ctrl_ret)
-	print("Test Traffic Stopped now adding delay before collecting stats")
 	time.sleep(60)
 	print("Traffic collection started")
 
