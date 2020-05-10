@@ -18,10 +18,9 @@ Library           ../libraries/Commands.py
 Library           ../libraries/Connect_devices.py
 Library           ../libraries/Spirent_Test_Suit.py
 Variables         ../libraries/templates.py
-Variables         ../libraries/templates.py
 
 *** Test Cases ***
-Test Creation of Two Site Main Interface Based EVPN service
+EVPN-Creation
     [Documentation]    TEST To Create Two Site EVPN service with Direct NCS Termination
     [Tags]    EVPN-Creation
     CONFIGURE INTERFACE    ${R1_net_connect}    ${MAIN_INTERFACE_R1}    ${interface_template}    ${R1_interface_data}
