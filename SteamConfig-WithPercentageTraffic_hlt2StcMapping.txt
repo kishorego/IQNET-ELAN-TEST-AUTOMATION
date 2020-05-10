@@ -1,0 +1,847 @@
+############# HLT2STC Mapping Log File #############
+
+
+sth::test_control -action enable
+
+
+sth::connect -device 10.91.113.124 -port_list {11/6 11/10} -break_locks 1 -offline 0
+stc::create project
+stc::create project
+stc::create project
+::stc::get project1 -parent
+::stc::get project1 -parent
+::stc::get project1 -parent
+::stc::get system1 -children-sequencer
+::stc::get system1 -children-sequencer
+::stc::get system1 -children-sequencer
+stc::connect 10.91.113.124
+stc::connect 10.91.113.124
+stc::connect 10.91.113.124
+stc::create Port -under project1 -location 10.91.113.124/11/6 -name 10.91.113.124-11-6
+stc::create Port -under project1 -location 10.91.113.124/11/6 -name 10.91.113.124-11-6
+stc::create Port -under project1 -location 10.91.113.124/11/6 -name 10.91.113.124-11-6
+stc::perform ReservePort -Location 10.91.113.124/11/6 -RevokeOwner true
+stc::perform ReservePort -Location 10.91.113.124/11/6 -RevokeOwner true
+stc::perform ReservePort -Location 10.91.113.124/11/6 -RevokeOwner true
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::config generatorconfig5 -SchedulingMode RATE_BASED
+stc::config generatorconfig5 -SchedulingMode RATE_BASED
+stc::config generatorconfig5 -SchedulingMode RATE_BASED
+stc::create Port -under project1 -location 10.91.113.124/11/10 -name 10.91.113.124-11-10
+stc::create Port -under project1 -location 10.91.113.124/11/10 -name 10.91.113.124-11-10
+stc::create Port -under project1 -location 10.91.113.124/11/10 -name 10.91.113.124-11-10
+stc::perform ReservePort -Location 10.91.113.124/11/10 -RevokeOwner true
+stc::perform ReservePort -Location 10.91.113.124/11/10 -RevokeOwner true
+stc::perform ReservePort -Location 10.91.113.124/11/10 -RevokeOwner true
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::config generatorconfig6 -SchedulingMode RATE_BASED
+stc::config generatorconfig6 -SchedulingMode RATE_BASED
+stc::config generatorconfig6 -SchedulingMode RATE_BASED
+stc::perform setupPortMappings
+stc::perform setupPortMappings
+stc::perform setupPortMappings
+
+
+sth::interface_config -mode config -port_handle port5 -create_host false -intf_mode ethernet -phy_mode fiber -scheduling_mode RATE_BASED -port_loadunit PERCENT_LINE_RATE -port_load 50 -enable_ping_response 0 -control_plane_mtu 1500 -flow_control false -speed ether1000 -data_path_mode normal -autonegotiation 1
+stc::get port5 -ActivePhy-targets
+stc::get port5 -ActivePhy-targets
+stc::get port5 -ActivePhy-targets
+stc::get port5 -supportedPhys
+stc::get port5 -supportedPhys
+stc::get port5 -supportedPhys
+stc::get ethernetfiber5 -LineSpeed
+stc::get ethernetfiber5 -LineSpeed
+stc::get ethernetfiber5 -LineSpeed
+stc::get port5 -Online
+stc::get port5 -Online
+stc::get port5 -Online
+stc::get port5 -activephy-Targets
+stc::get port5 -activephy-Targets
+stc::get port5 -activephy-Targets
+stc::get ethernetfiber5 -LineSpeed
+stc::get ethernetfiber5 -LineSpeed
+stc::get ethernetfiber5 -LineSpeed
+stc::get port5 -children-EthernetFiber
+stc::get port5 -children-EthernetFiber
+stc::get port5 -children-EthernetFiber
+stc::config ethernetfiber5 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+stc::config ethernetfiber5 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+stc::config ethernetfiber5 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+stc::perform PortSetupSetActivePhy -activephy ethernetfiber5
+stc::perform PortSetupSetActivePhy -activephy ethernetfiber5
+stc::perform PortSetupSetActivePhy -activephy ethernetfiber5
+stc::get ethernetfiber5 -isSpeedAutoNegotiationConfigurable
+stc::get ethernetfiber5 -isSpeedAutoNegotiationConfigurable
+stc::get ethernetfiber5 -isSpeedAutoNegotiationConfigurable
+stc::get port5 -children-Ethernet10GigCopper
+stc::get port5 -children-Ethernet10GigCopper
+stc::get port5 -children-Ethernet10GigCopper
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::config generatorconfig5 -SchedulingMode RATE_BASED
+stc::config generatorconfig5 -SchedulingMode RATE_BASED
+stc::config generatorconfig5 -SchedulingMode RATE_BASED
+stc::get port5 -AffiliationPort-Sources
+stc::get port5 -AffiliationPort-Sources
+stc::get port5 -AffiliationPort-Sources
+stc::get port5 -children-StreamBlock
+stc::get port5 -children-StreamBlock
+stc::get port5 -children-StreamBlock
+stc::perform ArpNdStart -HandleList port5
+stc::perform ArpNdStart -HandleList port5
+stc::perform ArpNdStart -HandleList port5
+stc::get port5 -children-Ethernet10GigCopper
+stc::get port5 -children-Ethernet10GigCopper
+stc::get port5 -children-Ethernet10GigCopper
+
+
+sth::interface_config -mode config -port_handle port6 -create_host false -intf_mode ethernet -phy_mode fiber -scheduling_mode RATE_BASED -port_loadunit PERCENT_LINE_RATE -port_load 50 -enable_ping_response 0 -control_plane_mtu 1500 -flow_control false -speed ether1000 -data_path_mode normal -autonegotiation 1
+stc::get port6 -ActivePhy-targets
+stc::get port6 -ActivePhy-targets
+stc::get port6 -ActivePhy-targets
+stc::get port6 -supportedPhys
+stc::get port6 -supportedPhys
+stc::get port6 -supportedPhys
+stc::get ethernetfiber6 -LineSpeed
+stc::get ethernetfiber6 -LineSpeed
+stc::get ethernetfiber6 -LineSpeed
+stc::get port6 -Online
+stc::get port6 -Online
+stc::get port6 -Online
+stc::get port6 -activephy-Targets
+stc::get port6 -activephy-Targets
+stc::get port6 -activephy-Targets
+stc::get ethernetfiber6 -LineSpeed
+stc::get ethernetfiber6 -LineSpeed
+stc::get ethernetfiber6 -LineSpeed
+stc::get port6 -children-EthernetFiber
+stc::get port6 -children-EthernetFiber
+stc::get port6 -children-EthernetFiber
+stc::config ethernetfiber6 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+stc::config ethernetfiber6 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+stc::config ethernetfiber6 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+stc::perform PortSetupSetActivePhy -activephy ethernetfiber6
+stc::perform PortSetupSetActivePhy -activephy ethernetfiber6
+stc::perform PortSetupSetActivePhy -activephy ethernetfiber6
+stc::get ethernetfiber6 -isSpeedAutoNegotiationConfigurable
+stc::get ethernetfiber6 -isSpeedAutoNegotiationConfigurable
+stc::get ethernetfiber6 -isSpeedAutoNegotiationConfigurable
+stc::get port6 -children-Ethernet10GigCopper
+stc::get port6 -children-Ethernet10GigCopper
+stc::get port6 -children-Ethernet10GigCopper
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::config generatorconfig6 -SchedulingMode RATE_BASED
+stc::config generatorconfig6 -SchedulingMode RATE_BASED
+stc::config generatorconfig6 -SchedulingMode RATE_BASED
+stc::get port6 -AffiliationPort-Sources
+stc::get port6 -AffiliationPort-Sources
+stc::get port6 -AffiliationPort-Sources
+stc::get port6 -children-StreamBlock
+stc::get port6 -children-StreamBlock
+stc::get port6 -children-StreamBlock
+stc::perform ArpNdStart -HandleList port6
+stc::perform ArpNdStart -HandleList port6
+stc::perform ArpNdStart -HandleList port6
+stc::get port6 -children-Ethernet10GigCopper
+stc::get port6 -children-Ethernet10GigCopper
+stc::get port6 -children-Ethernet10GigCopper
+
+
+sth::traffic_config -mode create -port_handle port5 -l2_encap ethernet_ii -l3_protocol ipv4 -ip_id 0 -ip_src_addr 192.85.1.2 -ip_dst_addr 192.0.0.1 -ip_ttl 255 -ip_hdr_length 5 -ip_protocol 253 -ip_fragment_offset 0 -ip_mbz 0 -ip_precedence 0 -ip_tos_field 0 -mac_dst_mode increment -mac_dst_repeat_count 0 -mac_dst_count 50 -mac_src_count 50 -mac_src_mode increment -mac_src_repeat_count 0 -mac_src 00:10:94:00:00:02 -mac_dst 00:00:01:00:00:01 -enable_control_plane 0 -l3_length 4982 -name StreamBlock_11 -fill_type constant -fcs_error 0 -fill_value 0 -frame_size 5000 -traffic_state 1 -high_speed_result_analysis 1 -length_mode fixed -dest_port_list port6 -tx_port_sending_traffic_to_self_en false -disable_signature 0 -enable_stream_only_gen 1 -pkts_per_burst 1 -inter_stream_gap_unit bytes -burst_loop_count 6000 -transmit_mode continuous -inter_stream_gap 12 -rate_mbps 800 -mac_discovery_gw 192.85.1.1 -enable_stream false
+
+
+::sth::mac_convert 00:00:01:00:00:01
+::stc::create streamBlock -under port5 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+::stc::create streamBlock -under port5 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+::stc::create streamBlock -under port5 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+stc::perform StreamBlockUpdate -streamblock streamblock5
+stc::perform StreamBlockUpdate -streamblock streamblock5
+stc::perform StreamBlockUpdate -streamblock streamblock5
+stc::get streamblock5 -children
+stc::get streamblock5 -children
+stc::get streamblock5 -children
+::stc::delete ethernet:ethernetii35
+::stc::delete ethernet:ethernetii35
+::stc::delete ethernet:ethernetii35
+::stc::delete ipv4:ipv423
+::stc::delete ipv4:ipv423
+::stc::delete ipv4:ipv423
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::config generatorconfig5 -DurationMode CONTINUOUS -BurstSize 1
+stc::config generatorconfig5 -DurationMode CONTINUOUS -BurstSize 1
+stc::config generatorconfig5 -DurationMode CONTINUOUS -BurstSize 1
+stc::config streamblock5 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_11 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port6 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+stc::config streamblock5 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_11 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port6 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+stc::config streamblock5 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_11 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port6 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+::stc::create ethernet:EthernetII -under streamblock5 -dstMac 00:00:01:00:00:01 -srcMac 00:10:94:00:00:02
+::stc::create ethernet:EthernetII -under streamblock5 -dstMac 00:00:01:00:00:01 -srcMac 00:10:94:00:00:02
+::stc::create ethernet:EthernetII -under streamblock5 -dstMac 00:00:01:00:00:01 -srcMac 00:10:94:00:00:02
+stc::get ethernet:ethernetii37 -name
+stc::get ethernet:ethernetii37 -name
+stc::get ethernet:ethernetii37 -name
+stc::get ethernet:ethernetii37 -srcMac
+stc::get ethernet:ethernetii37 -srcMac
+stc::get ethernet:ethernetii37 -srcMac
+stc::get streamblock5 -children-randomModifier
+stc::get streamblock5 -children-randomModifier
+stc::get streamblock5 -children-randomModifier
+stc::get streamblock5 -children-rangeModifier
+stc::get streamblock5 -children-rangeModifier
+stc::get streamblock5 -children-rangeModifier
+stc::get streamblock5 -children-tableModifier
+stc::get streamblock5 -children-tableModifier
+stc::get streamblock5 -children-tableModifier
+::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.srcMac
+::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.srcMac
+::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.srcMac
+stc::config rangemodifier3 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier3 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier3 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::get ethernet:ethernetii37 -name
+stc::get ethernet:ethernetii37 -name
+stc::get ethernet:ethernetii37 -name
+stc::get ethernet:ethernetii37 -dstMac
+stc::get ethernet:ethernetii37 -dstMac
+stc::get ethernet:ethernetii37 -dstMac
+stc::get streamblock5 -children-randomModifier
+stc::get streamblock5 -children-randomModifier
+stc::get streamblock5 -children-randomModifier
+stc::get streamblock5 -children-rangeModifier
+stc::get streamblock5 -children-rangeModifier
+stc::get streamblock5 -children-rangeModifier
+stc::get streamblock5 -children-tableModifier
+stc::get streamblock5 -children-tableModifier
+stc::get streamblock5 -children-tableModifier
+stc::get rangemodifier3 -OffsetReference
+stc::get rangemodifier3 -OffsetReference
+stc::get rangemodifier3 -OffsetReference
+::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.dstMac
+::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.dstMac
+::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.dstMac
+stc::config rangemodifier4 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier4 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier4 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::perform StreamBlockUpdate -streamblock streamblock5
+stc::perform StreamBlockUpdate -streamblock streamblock5
+stc::perform StreamBlockUpdate -streamblock streamblock5
+stc::get streamblock5 -children
+stc::get streamblock5 -children
+stc::get streamblock5 -children
+::stc::create ipv4:IPv4 -under streamblock5 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+::stc::create ipv4:IPv4 -under streamblock5 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+::stc::create ipv4:IPv4 -under streamblock5 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+stc::get ipv4:ipv425 -children-tosDiffserv
+stc::get ipv4:ipv425 -children-tosDiffserv
+stc::get ipv4:ipv425 -children-tosDiffserv
+stc::create tosDiffserv -under ipv4:ipv425
+stc::create tosDiffserv -under ipv4:ipv425
+stc::create tosDiffserv -under ipv4:ipv425
+stc::create tos -under tosdiffserv15 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+stc::create tos -under tosdiffserv15 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+stc::create tos -under tosdiffserv15 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+
+
+sth::traffic_config -mode create -port_handle port6 -l2_encap ethernet_ii -l3_protocol ipv4 -ip_id 0 -ip_src_addr 192.85.1.2 -ip_dst_addr 192.0.0.1 -ip_ttl 255 -ip_hdr_length 5 -ip_protocol 253 -ip_fragment_offset 0 -ip_mbz 0 -ip_precedence 0 -ip_tos_field 0 -mac_dst_mode increment -mac_dst_repeat_count 0 -mac_dst_count 50 -mac_src_count 50 -mac_src_mode increment -mac_src_repeat_count 0 -mac_src 00:00:01:00:00:01 -mac_dst 00:10:94:00:00:02 -enable_control_plane 0 -l3_length 4982 -name StreamBlock_12 -fill_type constant -fcs_error 0 -fill_value 0 -frame_size 5000 -traffic_state 1 -high_speed_result_analysis 1 -length_mode fixed -dest_port_list port5 -tx_port_sending_traffic_to_self_en false -disable_signature 0 -enable_stream_only_gen 1 -pkts_per_burst 1 -inter_stream_gap_unit bytes -burst_loop_count 6000 -transmit_mode continuous -inter_stream_gap 12 -rate_mbps 800 -mac_discovery_gw 192.85.1.1 -enable_stream false
+
+
+::sth::mac_convert 00:10:94:00:00:02
+::stc::create streamBlock -under port6 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+::stc::create streamBlock -under port6 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+::stc::create streamBlock -under port6 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+stc::perform StreamBlockUpdate -streamblock streamblock6
+stc::perform StreamBlockUpdate -streamblock streamblock6
+stc::perform StreamBlockUpdate -streamblock streamblock6
+stc::get streamblock6 -children
+stc::get streamblock6 -children
+stc::get streamblock6 -children
+::stc::delete ethernet:ethernetii41
+::stc::delete ethernet:ethernetii41
+::stc::delete ethernet:ethernetii41
+::stc::delete ipv4:ipv428
+::stc::delete ipv4:ipv428
+::stc::delete ipv4:ipv428
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::config generatorconfig6 -DurationMode CONTINUOUS -BurstSize 1
+stc::config generatorconfig6 -DurationMode CONTINUOUS -BurstSize 1
+stc::config generatorconfig6 -DurationMode CONTINUOUS -BurstSize 1
+stc::config streamblock6 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_12 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port5 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+stc::config streamblock6 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_12 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port5 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+stc::config streamblock6 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_12 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port5 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+::stc::create ethernet:EthernetII -under streamblock6 -dstMac 00:10:94:00:00:02 -srcMac 00:00:01:00:00:01
+::stc::create ethernet:EthernetII -under streamblock6 -dstMac 00:10:94:00:00:02 -srcMac 00:00:01:00:00:01
+::stc::create ethernet:EthernetII -under streamblock6 -dstMac 00:10:94:00:00:02 -srcMac 00:00:01:00:00:01
+stc::get ethernet:ethernetii43 -name
+stc::get ethernet:ethernetii43 -name
+stc::get ethernet:ethernetii43 -name
+stc::get ethernet:ethernetii43 -srcMac
+stc::get ethernet:ethernetii43 -srcMac
+stc::get ethernet:ethernetii43 -srcMac
+stc::get streamblock6 -children-randomModifier
+stc::get streamblock6 -children-randomModifier
+stc::get streamblock6 -children-randomModifier
+stc::get streamblock6 -children-rangeModifier
+stc::get streamblock6 -children-rangeModifier
+stc::get streamblock6 -children-rangeModifier
+stc::get streamblock6 -children-tableModifier
+stc::get streamblock6 -children-tableModifier
+stc::get streamblock6 -children-tableModifier
+::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.srcMac
+::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.srcMac
+::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.srcMac
+stc::config rangemodifier5 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier5 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier5 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::get ethernet:ethernetii43 -name
+stc::get ethernet:ethernetii43 -name
+stc::get ethernet:ethernetii43 -name
+stc::get ethernet:ethernetii43 -dstMac
+stc::get ethernet:ethernetii43 -dstMac
+stc::get ethernet:ethernetii43 -dstMac
+stc::get streamblock6 -children-randomModifier
+stc::get streamblock6 -children-randomModifier
+stc::get streamblock6 -children-randomModifier
+stc::get streamblock6 -children-rangeModifier
+stc::get streamblock6 -children-rangeModifier
+stc::get streamblock6 -children-rangeModifier
+stc::get streamblock6 -children-tableModifier
+stc::get streamblock6 -children-tableModifier
+stc::get streamblock6 -children-tableModifier
+stc::get rangemodifier5 -OffsetReference
+stc::get rangemodifier5 -OffsetReference
+stc::get rangemodifier5 -OffsetReference
+::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.dstMac
+::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.dstMac
+::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.dstMac
+stc::config rangemodifier6 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier6 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::config rangemodifier6 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+stc::perform StreamBlockUpdate -streamblock streamblock6
+stc::perform StreamBlockUpdate -streamblock streamblock6
+stc::perform StreamBlockUpdate -streamblock streamblock6
+stc::get streamblock6 -children
+stc::get streamblock6 -children
+stc::get streamblock6 -children
+::stc::create ipv4:IPv4 -under streamblock6 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+::stc::create ipv4:IPv4 -under streamblock6 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+::stc::create ipv4:IPv4 -under streamblock6 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+stc::get ipv4:ipv430 -children-tosDiffserv
+stc::get ipv4:ipv430 -children-tosDiffserv
+stc::get ipv4:ipv430 -children-tosDiffserv
+stc::create tosDiffserv -under ipv4:ipv430
+stc::create tosDiffserv -under ipv4:ipv430
+stc::create tosDiffserv -under ipv4:ipv430
+stc::create tos -under tosdiffserv18 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+stc::create tos -under tosdiffserv18 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+stc::create tos -under tosdiffserv18 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+
+
+sth::traffic_control -port_handle {port5 port6} -action run -duration 30
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get project1 -children-trafficoptions
+stc::get project1 -children-trafficoptions
+stc::get project1 -children-trafficoptions
+stc::config trafficoptions1 -TrafficStartMode asynchronous
+stc::config trafficoptions1 -TrafficStartMode asynchronous
+stc::config trafficoptions1 -TrafficStartMode asynchronous
+stc::get port5 -children-Analyzer
+stc::get port5 -children-Analyzer
+stc::get port5 -children-Analyzer
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port6 -children-Analyzer
+stc::get port6 -children-Analyzer
+stc::get port6 -children-Analyzer
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+stc::get port5 -affiliationport-Sources
+stc::get port5 -affiliationport-Sources
+stc::get port5 -affiliationport-Sources
+stc::get port5 -children-streamblock
+stc::get port5 -children-streamblock
+stc::get port5 -children-streamblock
+stc::perform ArpNdStart -HandleList streamblock5
+stc::perform ArpNdStart -HandleList streamblock5
+stc::perform ArpNdStart -HandleList streamblock5
+stc::get port6 -affiliationport-Sources
+stc::get port6 -affiliationport-Sources
+stc::get port6 -affiliationport-Sources
+stc::get port6 -children-streamblock
+stc::get port6 -children-streamblock
+stc::get port6 -children-streamblock
+stc::perform ArpNdStart -HandleList streamblock6
+stc::perform ArpNdStart -HandleList streamblock6
+stc::perform ArpNdStart -HandleList streamblock6
+stc::perform generatorstart -GeneratorList {generator5 generator6}
+stc::perform generatorstart -GeneratorList {generator5 generator6}
+stc::perform generatorstart -GeneratorList {generator5 generator6}
+
+
+sth::traffic_control -port_handle {port5 port6} -action clear_stats
+stc::perform ResultsClearAll -PortList {port5 port6}
+stc::perform ResultsClearAll -PortList {port5 port6}
+stc::perform ResultsClearAll -PortList {port5 port6}
+
+
+sth::traffic_control -port_handle {port5 port6} -action run -duration 30
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::get generator5 -children-generatorconfig
+stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::get generator6 -children-generatorconfig
+stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get generator5.GeneratorConfig -DurationMode
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get generator6.GeneratorConfig -DurationMode
+stc::get project1 -children-trafficoptions
+stc::get project1 -children-trafficoptions
+stc::get project1 -children-trafficoptions
+stc::config trafficoptions1 -TrafficStartMode asynchronous
+stc::config trafficoptions1 -TrafficStartMode asynchronous
+stc::config trafficoptions1 -TrafficStartMode asynchronous
+stc::get port5 -children-Analyzer
+stc::get port5 -children-Analyzer
+stc::get port5 -children-Analyzer
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port6 -children-Analyzer
+stc::get port6 -children-Analyzer
+stc::get port6 -children-Analyzer
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+stc::perform generatorstart -GeneratorList {generator5 generator6}
+stc::perform generatorstart -GeneratorList {generator5 generator6}
+stc::perform generatorstart -GeneratorList {generator5 generator6}
+
+
+sth::traffic_stats -port_handle {port5 port6} -mode all
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -State
+stc::get generator5 -State
+stc::get generator5 -State
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Analyzer -resulttype AnalyzerPortResults -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Analyzer -resulttype AnalyzerPortResults -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Analyzer -resulttype AnalyzerPortResults -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Generator -resulttype GeneratorPortResults -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Generator -resulttype GeneratorPortResults -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Generator -resulttype GeneratorPortResults -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Analyzer -resulttype OverflowResults -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Analyzer -resulttype OverflowResults -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType Analyzer -resulttype OverflowResults -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType StreamBlock -resulttype RxStreamBlockResults -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType StreamBlock -resulttype RxStreamBlockResults -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType StreamBlock -resulttype RxStreamBlockResults -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+stc::perform RefreshResultView -ResultDataSet resultdataset24
+stc::perform RefreshResultView -ResultDataSet resultdataset24
+stc::perform RefreshResultView -ResultDataSet resultdataset24
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType StreamBlock -resulttype TxStreamBlockResults -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType StreamBlock -resulttype TxStreamBlockResults -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+stc::subscribe -Parent project1 -ResultParent port5 -ConfigType StreamBlock -resulttype TxStreamBlockResults -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+stc::sleep 3
+stc::sleep 3
+stc::sleep 3
+stc::get port5 -children-capture
+stc::get port5 -children-capture
+stc::get port5 -children-capture
+stc::get capture5 -children-CaptureFilter
+stc::get capture5 -children-CaptureFilter
+stc::get capture5 -children-CaptureFilter
+stc::get capturefilter5 -children-CaptureAnalyzerFilter
+stc::get capturefilter5 -children-CaptureAnalyzerFilter
+stc::get capturefilter5 -children-CaptureAnalyzerFilter
+stc::get resultdataset21 -TotalPageCount
+stc::get resultdataset21 -TotalPageCount
+stc::get resultdataset21 -TotalPageCount
+stc::get resultdataset21 -ResultHandleList
+stc::get resultdataset21 -ResultHandleList
+stc::get resultdataset21 -ResultHandleList
+stc::get analyzerportresults5
+stc::get analyzerportresults5
+stc::get analyzerportresults5
+stc::get analyzerportresults5 -parent
+stc::get analyzerportresults5 -parent
+stc::get analyzerportresults5 -parent
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -children-generatorportresults
+stc::get generator5 -children-generatorportresults
+stc::get generator5 -children-generatorportresults
+stc::get generatorportresults5
+stc::get generatorportresults5
+stc::get generatorportresults5
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get port5 -children-generator
+stc::get generator5 -state
+stc::get generator5 -state
+stc::get generator5 -state
+stc::get port5 -children-analyzer
+stc::get port5 -children-analyzer
+stc::get port5 -children-analyzer
+stc::get analyzer5 -children-overflowresults
+stc::get analyzer5 -children-overflowresults
+stc::get analyzer5 -children-overflowresults
+stc::get overflowresults5
+stc::get overflowresults5
+stc::get overflowresults5
+stc::get resultdataset24 -totalPageCount
+stc::get resultdataset24 -totalPageCount
+stc::get resultdataset24 -totalPageCount
+stc::get resultdataset24 -resultChild-targets
+stc::get resultdataset24 -resultChild-targets
+stc::get resultdataset24 -resultChild-targets
+stc::get rxstreamblockresults5 -parent
+stc::get rxstreamblockresults5 -parent
+stc::get rxstreamblockresults5 -parent
+stc::get streamblock5 -parent
+stc::get streamblock5 -parent
+stc::get streamblock5 -parent
+stc::get rxstreamblockresults5
+stc::get rxstreamblockresults5
+stc::get rxstreamblockresults5
+stc::get resultdataset25 -totalPageCount
+stc::get resultdataset25 -totalPageCount
+stc::get resultdataset25 -totalPageCount
+stc::get resultdataset25 -resultChild-targets
+stc::get resultdataset25 -resultChild-targets
+stc::get resultdataset25 -resultChild-targets
+stc::get txstreamblockresults5 -parent
+stc::get txstreamblockresults5 -parent
+stc::get txstreamblockresults5 -parent
+stc::get streamblock5 -parent
+stc::get streamblock5 -parent
+stc::get streamblock5 -parent
+stc::get txstreamblockresults5
+stc::get txstreamblockresults5
+stc::get txstreamblockresults5
+stc::get streamblock5 -RunningState
+stc::get streamblock5 -RunningState
+stc::get streamblock5 -RunningState
+stc::unsubscribe resultdataset22
+stc::unsubscribe resultdataset22
+stc::unsubscribe resultdataset22
+stc::delete resultdataset22
+stc::delete resultdataset22
+stc::delete resultdataset22
+stc::unsubscribe resultdataset21
+stc::unsubscribe resultdataset21
+stc::unsubscribe resultdataset21
+stc::delete resultdataset21
+stc::delete resultdataset21
+stc::delete resultdataset21
+stc::unsubscribe resultdataset23
+stc::unsubscribe resultdataset23
+stc::unsubscribe resultdataset23
+stc::delete resultdataset23
+stc::delete resultdataset23
+stc::delete resultdataset23
+stc::unsubscribe resultdataset25
+stc::unsubscribe resultdataset25
+stc::unsubscribe resultdataset25
+stc::delete resultdataset25
+stc::delete resultdataset25
+stc::delete resultdataset25
+stc::unsubscribe resultdataset24
+stc::unsubscribe resultdataset24
+stc::unsubscribe resultdataset24
+stc::delete resultdataset24
+stc::delete resultdataset24
+stc::delete resultdataset24
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -State
+stc::get generator6 -State
+stc::get generator6 -State
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Analyzer -resulttype AnalyzerPortResults -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Analyzer -resulttype AnalyzerPortResults -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Analyzer -resulttype AnalyzerPortResults -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Generator -resulttype GeneratorPortResults -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Generator -resulttype GeneratorPortResults -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Generator -resulttype GeneratorPortResults -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Analyzer -resulttype OverflowResults -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Analyzer -resulttype OverflowResults -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType Analyzer -resulttype OverflowResults -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType StreamBlock -resulttype RxStreamBlockResults -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType StreamBlock -resulttype RxStreamBlockResults -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType StreamBlock -resulttype RxStreamBlockResults -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+stc::perform RefreshResultView -ResultDataSet resultdataset29
+stc::perform RefreshResultView -ResultDataSet resultdataset29
+stc::perform RefreshResultView -ResultDataSet resultdataset29
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType StreamBlock -resulttype TxStreamBlockResults -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType StreamBlock -resulttype TxStreamBlockResults -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+stc::subscribe -Parent project1 -ResultParent port6 -ConfigType StreamBlock -resulttype TxStreamBlockResults -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+stc::sleep 3
+stc::sleep 3
+stc::sleep 3
+
+
+after 3000
+stc::get port6 -children-capture
+stc::get port6 -children-capture
+stc::get port6 -children-capture
+stc::get capture6 -children-CaptureFilter
+stc::get capture6 -children-CaptureFilter
+stc::get capture6 -children-CaptureFilter
+stc::get capturefilter6 -children-CaptureAnalyzerFilter
+stc::get capturefilter6 -children-CaptureAnalyzerFilter
+stc::get capturefilter6 -children-CaptureAnalyzerFilter
+stc::get resultdataset26 -TotalPageCount
+stc::get resultdataset26 -TotalPageCount
+stc::get resultdataset26 -TotalPageCount
+stc::get resultdataset26 -ResultHandleList
+stc::get resultdataset26 -ResultHandleList
+stc::get resultdataset26 -ResultHandleList
+stc::get analyzerportresults6
+stc::get analyzerportresults6
+stc::get analyzerportresults6
+stc::get analyzerportresults6 -parent
+stc::get analyzerportresults6 -parent
+stc::get analyzerportresults6 -parent
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -children-generatorportresults
+stc::get generator6 -children-generatorportresults
+stc::get generator6 -children-generatorportresults
+stc::get generatorportresults6
+stc::get generatorportresults6
+stc::get generatorportresults6
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get port6 -children-generator
+stc::get generator6 -state
+stc::get generator6 -state
+stc::get generator6 -state
+stc::get port6 -children-analyzer
+stc::get port6 -children-analyzer
+stc::get port6 -children-analyzer
+stc::get analyzer6 -children-overflowresults
+stc::get analyzer6 -children-overflowresults
+stc::get analyzer6 -children-overflowresults
+stc::get overflowresults6
+stc::get overflowresults6
+stc::get overflowresults6
+stc::get resultdataset29 -totalPageCount
+stc::get resultdataset29 -totalPageCount
+stc::get resultdataset29 -totalPageCount
+stc::get resultdataset29 -resultChild-targets
+stc::get resultdataset29 -resultChild-targets
+stc::get resultdataset29 -resultChild-targets
+stc::get rxstreamblockresults6 -parent
+stc::get rxstreamblockresults6 -parent
+stc::get rxstreamblockresults6 -parent
+stc::get streamblock6 -parent
+stc::get streamblock6 -parent
+stc::get streamblock6 -parent
+stc::get rxstreamblockresults6
+stc::get rxstreamblockresults6
+stc::get rxstreamblockresults6
+stc::get resultdataset30 -totalPageCount
+stc::get resultdataset30 -totalPageCount
+stc::get resultdataset30 -totalPageCount
+stc::get resultdataset30 -resultChild-targets
+stc::get resultdataset30 -resultChild-targets
+stc::get resultdataset30 -resultChild-targets
+stc::get txstreamblockresults6 -parent
+stc::get txstreamblockresults6 -parent
+stc::get txstreamblockresults6 -parent
+stc::get streamblock6 -parent
+stc::get streamblock6 -parent
+stc::get streamblock6 -parent
+stc::get txstreamblockresults6
+stc::get txstreamblockresults6
+stc::get txstreamblockresults6
+stc::get streamblock6 -RunningState
+stc::get streamblock6 -RunningState
+stc::get streamblock6 -RunningState
+stc::unsubscribe resultdataset27
+stc::unsubscribe resultdataset27
+stc::unsubscribe resultdataset27
+stc::delete resultdataset27
+stc::delete resultdataset27
+stc::delete resultdataset27
+stc::unsubscribe resultdataset26
+stc::unsubscribe resultdataset26
+stc::unsubscribe resultdataset26
+stc::delete resultdataset26
+stc::delete resultdataset26
+stc::delete resultdataset26
+stc::unsubscribe resultdataset28
+stc::unsubscribe resultdataset28
+stc::unsubscribe resultdataset28
+stc::delete resultdataset28
+stc::delete resultdataset28
+stc::delete resultdataset28
+stc::unsubscribe resultdataset30
+stc::unsubscribe resultdataset30
+stc::unsubscribe resultdataset30
+stc::delete resultdataset30
+stc::delete resultdataset30
+stc::delete resultdataset30
+stc::unsubscribe resultdataset29
+stc::unsubscribe resultdataset29
+stc::unsubscribe resultdataset29
+stc::delete resultdataset29
+stc::delete resultdataset29
+stc::delete resultdataset29
+
+
+sth::cleanup_session -port_handle {port5 port6} -clean_dbfile 1
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get project1 -children-port
+stc::get port5 -children-streamblock
+stc::get port5 -children-streamblock
+stc::get port5 -children-streamblock
+stc::get port6 -children-streamblock
+stc::get port6 -children-streamblock
+stc::get port6 -children-streamblock
+stc::perform DeleteCommand -ConfigList {streamblock5 streamblock6}
+stc::perform DeleteCommand -ConfigList {streamblock5 streamblock6}
+stc::perform DeleteCommand -ConfigList {streamblock5 streamblock6}
+stc::get port5 -online
+stc::get port5 -online
+stc::get port5 -online
+stc::release 10.91.113.124/11/6
+stc::release 10.91.113.124/11/6
+stc::release 10.91.113.124/11/6
+stc::delete port5
+stc::delete port5
+stc::delete port5
+stc::get port6 -online
+stc::get port6 -online
+stc::get port6 -online
+stc::release 10.91.113.124/11/10
+stc::release 10.91.113.124/11/10
+stc::release 10.91.113.124/11/10
+stc::delete port6
+stc::delete port6
+stc::delete port6
+stc::get system1 -children-physicalchassismanager
+stc::get system1 -children-physicalchassismanager
+stc::get system1 -children-physicalchassismanager
+stc::get physicalchassismanager1 -children-physicalchassis
+stc::get physicalchassismanager1 -children-physicalchassis
+stc::get physicalchassismanager1 -children-physicalchassis
+stc::get physicalchassis1 -Hostname
+stc::get physicalchassis1 -Hostname
+stc::get physicalchassis1 -Hostname
+stc::disconnect 10.91.113.124
+stc::disconnect 10.91.113.124
+stc::disconnect 10.91.113.124

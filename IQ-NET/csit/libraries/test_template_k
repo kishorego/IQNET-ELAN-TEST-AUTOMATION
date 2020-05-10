@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+import time
+from jinja2 import Template
+#import templates as t1
+import os
+import jinja2
+import textfsm

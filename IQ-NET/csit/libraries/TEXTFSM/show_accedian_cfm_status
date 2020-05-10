@@ -1,0 +1,8 @@
+Value Fault_Notifications_State ((\S+))
+Value Highest_Defect_Priority ((\S+))
+
+Start
+  ^.*Fault notifications state.*: ${Fault_Notifications_State}.*
+  ^.*Highest defect priority.*: ${Highest_Defect_Priority}.* -> Record
+
+EOF

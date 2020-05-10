@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181122 18:36:05.535" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\Softwares_mine\IQ-NET\csit\suites\P2P.robot" id="s1" name="P2P">
+<kw type="setup" name="Setup Actions" library="Resource">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Setup Actions done here</arg>
+</arguments>
+<status status="PASS" endtime="20181122 18:36:06.105" starttime="20181122 18:36:06.105"></status>
+</kw>
+<kw name="Get Data" library="Connect_devices">
+<assign>
+<var>${Topo_data}</var>
+</assign>
+<msg timestamp="20181122 18:36:06.112" level="INFO">${Topo_data} = {u'Device_Details': {u'R1': {u'username': u'agowda', u'ip': u'10.91.126.113', u'password': u'Drop41234', u'port': u'22', u'device_type': u'cisco_xr'}, u'R2': {u'username': u'agowda', u'ip': u'10.91.12...</msg>
+<status status="PASS" endtime="20181122 18:36:06.112" starttime="20181122 18:36:06.106"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Topo_data}</arg>
+<arg>Device_Details</arg>
+</arguments>
+<assign>
+<var>${DEV_DICT}</var>
+</assign>
+<msg timestamp="20181122 18:36:06.113" level="INFO">${DEV_DICT} = {u'R1': {u'username': u'agowda', u'ip': u'10.91.126.113', u'password': u'Drop41234', u'port': u'22', u'device_type': u'cisco_xr'}, u'R2': {u'username': u'agowda', u'ip': u'10.91.126.114', u'password':...</msg>
+<status status="PASS" endtime="20181122 18:36:06.113" starttime="20181122 18:36:06.112"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Topo_data}</arg>
+<arg>Link_Details</arg>
+</arguments>
+<assign>
+<var>${LINK_DICT}</var>
+</assign>
+<msg timestamp="20181122 18:36:06.113" level="INFO">${LINK_DICT} = {u'Link_R1_R2_1': {u'R1': u'tenGigE0/0/0/30', u'R2': u'tenGigE0/0/0/30'}}</msg>
+<status status="PASS" endtime="20181122 18:36:06.113" starttime="20181122 18:36:06.113"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${LINK_DICT}</arg>
+<arg>Link_R1_R2_1</arg>
+</arguments>
+<assign>
+<var>${Link_R1_R2_1}</var>
+</assign>
+<msg timestamp="20181122 18:36:06.114" level="INFO">${Link_R1_R2_1} = {u'R1': u'tenGigE0/0/0/30', u'R2': u'tenGigE0/0/0/30'}</msg>
+<status status="PASS" endtime="20181122 18:36:06.114" starttime="20181122 18:36:06.113"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Link_R1_R2_1}</arg>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${PORT_R1_to_R2_1}</var>
+</assign>
+<msg timestamp="20181122 18:36:06.115" level="INFO">${PORT_R1_to_R2_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20181122 18:36:06.115" starttime="20181122 18:36:06.114"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Link_R1_R2_1}</arg>
+<arg>R2</arg>
+</arguments>
+<assign>
+<var>${PORT_R2_to_R1_1}</var>
+</assign>
+<msg timestamp="20181122 18:36:06.116" level="INFO">${PORT_R2_to_R1_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20181122 18:36:06.116" starttime="20181122 18:36:06.115"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${DEV_DICT}</arg>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${R1_DICT}</var>
+</assign>
+<msg timestamp="20181122 18:36:06.117" level="INFO">${R1_DICT} = {u'username': u'agowda', u'ip': u'10.91.126.113', u'password': u'Drop41234', u'port': u'22', u'device_type': u'cisco_xr'}</msg>
+<status status="PASS" endtime="20181122 18:36:06.117" starttime="20181122 18:36:06.116"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${PORT_R1_to_R2_1}</arg>
+</arguments>
+<msg timestamp="20181122 18:36:06.118" level="INFO">${PORT_R1_to_R2_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20181122 18:36:06.118" starttime="20181122 18:36:06.117"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${PORT_R2_to_R1_1}</arg>
+</arguments>
+<msg timestamp="20181122 18:36:06.119" level="INFO">${PORT_R2_to_R1_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20181122 18:36:06.119" starttime="20181122 18:36:06.118"></status>
+</kw>
+<kw name="Make Connection" library="Connect_devices">
+<arguments>
+<arg>${R1_DICT}</arg>
+</arguments>
+<assign>
+<var>${R1_net_connect}</var>
+</assign>
+<msg timestamp="20181122 18:36:21.292" level="INFO">&lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000044F1588&gt;
+cisco_xr: RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20181122 18:36:21.292" level="INFO">${R1_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000044F1588&gt;</msg>
+<status status="PASS" endtime="20181122 18:36:21.292" starttime="20181122 18:36:06.119"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${R1_net_connect}</arg>
+</arguments>
+<msg timestamp="20181122 18:36:21.293" level="INFO">${R1_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000044F1588&gt;</msg>
+<status status="PASS" endtime="20181122 18:36:21.293" starttime="20181122 18:36:21.293"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connection Establihed to RTR1</arg>
+</arguments>
+<status status="PASS" endtime="20181122 18:36:21.294" starttime="20181122 18:36:21.293"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${DEV_DICT}</arg>
+<arg>R2</arg>
+</arguments>
+<assign>
+<var>${R2_DICT}</var>
+</assign>
+<msg timestamp="20181122 18:36:21.295" level="INFO">${R2_DICT} = {u'username': u'agowda', u'ip': u'10.91.126.114', u'password': u'Drop41234', u'port': u'22', u'device_type': u'cisco_xr'}</msg>
+<status status="PASS" endtime="20181122 18:36:21.295" starttime="20181122 18:36:21.294"></status>
+</kw>
+<kw name="Make Connection" library="Connect_devices">
+<arguments>
+<arg>${R2_DICT}</arg>
+</arguments>
+<assign>
+<var>${R2_net_connect}</var>
+</assign>
+<msg timestamp="20181122 18:36:32.456" level="INFO">&lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x0000000004818630&gt;
+cisco_xr: RP/0/RP0/CPU0:ar4.BLB#</msg>
+<msg timestamp="20181122 18:36:32.456" level="INFO">${R2_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x0000000004818630&gt;</msg>
+<status status="PASS" endtime="20181122 18:36:32.456" starttime="20181122 18:36:21.295"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${R2_net_connect}</arg>
+</arguments>
+<msg timestamp="20181122 18:36:32.457" level="INFO">${R2_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x0000000004818630&gt;</msg>
+<status status="PASS" endtime="20181122 18:36:32.457" starttime="20181122 18:36:32.456"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connection Establihed to RTR2</arg>
+</arguments>
+<status status="PASS" endtime="20181122 18:36:32.458" starttime="20181122 18:36:32.457"></status>
+</kw>
+<status status="PASS" endtime="20181122 18:36:32.458" starttime="20181122 18:36:06.104">

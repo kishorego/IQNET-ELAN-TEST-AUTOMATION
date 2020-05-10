@@ -1,0 +1,6 @@
+Value MAC_Address ((\S+))
+
+Start
+  ^.*MAC.*: ${MAC_Address}.* -> Record
+
+EOF

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180810 13:12:06.785" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\Softwares_mine\IQ-NET\csit\suites\P2P.robot" id="s1" name="P2P">
+<kw type="setup" name="Setup Actions" library="Resource">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Setup Actions done here</arg>
+</arguments>
+<status status="PASS" endtime="20180810 13:12:09.109" starttime="20180810 13:12:09.109"></status>
+</kw>
+<kw name="Get Data" library="Connect_devices">
+<assign>
+<var>${Topo_data}</var>
+</assign>
+<msg timestamp="20180810 13:12:09.110" level="INFO">${Topo_data} = {u'Device_Details': {u'R1': {u'username': u'agowda', u'ip': u'10.91.126.113', u'password': u'Drop41234', u'port': u'22', u'device_type': u'cisco_xr'}, u'R2': {u'username': u'agowda', u'ip': u'10.91.12...</msg>
+<status status="PASS" endtime="20180810 13:12:09.111" starttime="20180810 13:12:09.110"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Topo_data}</arg>
+<arg>Device_Details</arg>
+</arguments>
+<assign>
+<var>${DEV_DICT}</var>
+</assign>
+<msg timestamp="20180810 13:12:09.111" level="INFO">${DEV_DICT} = {u'R1': {u'username': u'agowda', u'ip': u'10.91.126.113', u'password': u'Drop41234', u'port': u'22', u'device_type': u'cisco_xr'}, u'R2': {u'username': u'agowda', u'ip': u'10.91.126.114', u'password':...</msg>
+<status status="PASS" endtime="20180810 13:12:09.111" starttime="20180810 13:12:09.111"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Topo_data}</arg>
+<arg>Link_Details</arg>
+</arguments>
+<assign>
+<var>${LINK_DICT}</var>
+</assign>
+<msg timestamp="20180810 13:12:09.112" level="INFO">${LINK_DICT} = {u'Link_R1_R2_1': {u'R1': u'tenGigE0/0/0/30', u'R2': u'tenGigE0/0/0/30'}}</msg>
+<status status="PASS" endtime="20180810 13:12:09.112" starttime="20180810 13:12:09.112"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${LINK_DICT}</arg>
+<arg>Link_R1_R2_1</arg>
+</arguments>
+<assign>
+<var>${Link_R1_R2_1}</var>
+</assign>
+<msg timestamp="20180810 13:12:09.113" level="INFO">${Link_R1_R2_1} = {u'R1': u'tenGigE0/0/0/30', u'R2': u'tenGigE0/0/0/30'}</msg>
+<status status="PASS" endtime="20180810 13:12:09.113" starttime="20180810 13:12:09.112"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Link_R1_R2_1}</arg>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${PORT_R1_to_R2_1}</var>
+</assign>
+<msg timestamp="20180810 13:12:09.115" level="INFO">${PORT_R1_to_R2_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20180810 13:12:09.115" starttime="20180810 13:12:09.113"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Link_R1_R2_1}</arg>
+<arg>R2</arg>
+</arguments>
+<assign>
+<var>${PORT_R2_to_R1_1}</var>
+</assign>
+<msg timestamp="20180810 13:12:09.116" level="INFO">${PORT_R2_to_R1_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20180810 13:12:09.116" starttime="20180810 13:12:09.116"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${DEV_DICT}</arg>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${R1_DICT}</var>
+</assign>
+<msg timestamp="20180810 13:12:09.118" level="INFO">${R1_DICT} = {u'username': u'agowda', u'ip': u'10.91.126.113', u'password': u'Drop41234', u'port': u'22', u'device_type': u'cisco_xr'}</msg>
+<status status="PASS" endtime="20180810 13:12:09.118" starttime="20180810 13:12:09.117"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${PORT_R1_to_R2_1}</arg>
+</arguments>
+<msg timestamp="20180810 13:12:09.119" level="INFO">${PORT_R1_to_R2_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20180810 13:12:09.119" starttime="20180810 13:12:09.118"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${PORT_R2_to_R1_1}</arg>
+</arguments>
+<msg timestamp="20180810 13:12:09.120" level="INFO">${PORT_R2_to_R1_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20180810 13:12:09.120" starttime="20180810 13:12:09.120"></status>
+</kw>
+<kw name="Make Connection" library="Connect_devices">
+<arguments>
+<arg>${R1_DICT}</arg>
+</arguments>
+<assign>
+<var>${R1_net_connect}</var>
+</assign>
+<msg timestamp="20180810 13:12:30.130" level="FAIL">NetMikoTimeoutException: Connection to device timed-out: cisco_xr 10.91.126.113:22</msg>
+<msg timestamp="20180810 13:12:30.130" level="DEBUG">Traceback (most recent call last):
+  File "C:\Softwares_mine\IQ-NET\csit\libraries\Connect_devices.py", line 30, in make_connection
+    net_connect = ConnectHandler(**a_device)
+  File "C:\Python27\lib\site-packages\netmiko\ssh_dispatcher.py", line 190, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\netmiko\base_connection.py", line 245, in __init__
+    self.establish_connection()
+  File "C:\Python27\lib\site-packages\netmiko\base_connection.py", line 743, in establish_connection
+    raise NetMikoTimeoutException(msg)</msg>
+<status status="FAIL" endtime="20180810 13:12:30.131" starttime="20180810 13:12:09.120"></status>
+</kw>
+<status status="FAIL" endtime="20180810 13:12:30.131" starttime="20180810 13:12:09.108"></status>
+</kw>
+<test id="s1-t1" name="Test P2P EPL service">
+<doc>TEST P2P EPL service</doc>
+<tags>
+<tag>p2p</tag>
+</tags>
+<status status="FAIL" endtime="20180810 13:12:30.134" critical="yes" starttime="20180810 13:12:30.132">Parent suite setup failed:
+NetMikoTimeoutException: Connection to device timed-out: cisco_xr 10.91.126.113:22</status>
+</test>
+<kw type="teardown" name="Teardown Actions" library="Resource">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Teardown Actions done here</arg>
+</arguments>
+<status status="PASS" endtime="20180810 13:12:30.149" starttime="20180810 13:12:30.147"></status>
+</kw>
+<kw name="Close Connection" library="Connect_devices">
+<arguments>
+<arg>${R1_net_connect}</arg>
+</arguments>
+<msg timestamp="20180810 13:12:30.155" level="FAIL">Variable '${R1_net_connect}' not found.</msg>
+<status status="FAIL" endtime="20180810 13:12:30.155" starttime="20180810 13:12:30.150"></status>
+</kw>
+<kw name="Close Connection" library="Connect_devices">
+<arguments>
+<arg>${R2_net_connect}</arg>
+</arguments>
+<msg timestamp="20180810 13:12:30.163" level="FAIL">Variable '${R2_net_connect}' not found.</msg>
+<status status="FAIL" endtime="20180810 13:12:30.163" starttime="20180810 13:12:30.156"></status>
+</kw>
+<status status="FAIL" endtime="20180810 13:12:30.165" starttime="20180810 13:12:30.146">Several failures occurred:
+
+1) Variable '${R1_net_connect}' not found.
+
+2) Variable '${R2_net_connect}' not found.</status>
+</kw>
+<doc>A test suite with tests for P2P conenctivity.
+Topology:-
+____________________________
+
+
+Testplan Goals:-
+1. CHECK P2P EPL service.</doc>
+<metadata>
+<item name="Version">1.0
+More Info For more information about Robot Framework see http://robotframework.org
+Author Sathishkumar murugesan
+Date 12 Dec 2017
+Executed At HOST
+Test Framework Robot Framework Python</item>
+</metadata>
+<status status="FAIL" endtime="20180810 13:12:30.165" starttime="20180810 13:12:06.790">Suite setup failed:
+NetMikoTimeoutException: Connection to device timed-out: cisco_xr 10.91.126.113:22
+
+Also suite teardown failed:
+Several failures occurred:
+
+1) Variable '${R1_net_connect}' not found.
+
+2) Variable '${R2_net_connect}' not found.</status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">p2p</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="P2P" pass="0">P2P</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

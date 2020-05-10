@@ -1,0 +1,6 @@
+sth_interface_tipology:
+   mode': config
+   create_host: false
+   intf_mode: ethernet
+   scheduling_mode: RATE_BASED
+   duplex: full

@@ -1,0 +1,30 @@
+sth_interface_config:
+   mode: 'config'
+   create_host: 'false'
+   intf_mode: 'ethernet'
+   scheduling_mode: 'RATE_BASED'
+   duplex: 'full'
+
+Spirent_Port_Booking:
+   Port1: 11/6
+   Port2: 11/10
+
+Spirent_Test_Infrastructure:
+   Number_of_ports: 2
+   Number_of_streams_per_Port: 1
+   Total_Number_of_stream: 2
+   Initial_MAC_address: 00:00:01:00:00:01
+
+Stream_Names:
+   Stream1: Unicast_Stream_From_9-3_to_9-4
+   Stream2: Unicast_Stream_From_9-4_to_9-3
+
+Spirent_stream_config:
+   mode: 'create'
+   l2_encap: 'ethernet_ii'
+   l3_protocol: 'ipv4'
+   ip_id:  '0'
+   frame_size:  2000
+   transmit_mode: 'continuous'
+   rate_percent:  50
+   length_mode:  'fixed'

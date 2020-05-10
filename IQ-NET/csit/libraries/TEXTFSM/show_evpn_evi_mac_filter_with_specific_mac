@@ -1,0 +1,7 @@
+Value evi ((\d+))
+Value MAC_Address ((\S+))
+
+Start
+  ^${evi}\s+${MAC_Address}.* -> Record
+
+EOF

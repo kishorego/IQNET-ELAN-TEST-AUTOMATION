@@ -1,0 +1,810 @@
+############# Spirent HLTAPI Log File #############
+Hlt Api (Ver. 4.67) was successfully loaded and initialized
+Internal Version: 4.67GA.0116
+Sun May 10 3:36:54 PM India Standard Time 2020 [hltcall] ::sth::test_control {-action enable}
+Sun May 10 3:36:54 PM India Standard Time 2020 [hltcall] ::sth::connect {-device 10.91.113.124 -port_list {11/6 11/10} -break_locks 1 -offline 0}
+Sun May 10 3:36:54 PM India Standard Time 2020 [stccall] stc::create project
+Sun May 10 3:36:54 PM India Standard Time 2020 [debug] return value: project1 
+Sun May 10 3:36:54 PM India Standard Time 2020 [debug] {Calling sth::connect}
+Sun May 10 3:36:54 PM India Standard Time 2020 [info] {Generating session table}
+Sun May 10 3:36:54 PM India Standard Time 2020 [info] {Calling: _none_}
+Sun May 10 3:36:54 PM India Standard Time 2020 [info] {Calling: ::sth::Session::processConnectDevice}
+Sun May 10 3:36:54 PM India Standard Time 2020 [info] {Calling processConnectDevice}
+Sun May 10 3:36:54 PM India Standard Time 2020 [stccall] stc::connect 10.91.113.124
+Sun May 10 3:36:55 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:36:55 PM India Standard Time 2020 [debug] {::sth::sthCore::invoke stc::connect Chassis: 10.91.113.124: Status: }
+Sun May 10 3:36:55 PM India Standard Time 2020 [debug] Connected to chassis: 10.91.113.124
+Sun May 10 3:36:55 PM India Standard Time 2020 [info] {Successfully completed processing switch: device for HltCmd: Connect}
+Sun May 10 3:36:55 PM India Standard Time 2020 [info] {Calling: ::sth::Session::processConnectPort_list}
+Sun May 10 3:36:55 PM India Standard Time 2020 [stccall] stc::create Port -under project1 -location 10.91.113.124/11/6 -name 10.91.113.124-11-6
+Sun May 10 3:36:55 PM India Standard Time 2020 [debug] return value: port5 
+Sun May 10 3:36:55 PM India Standard Time 2020 [stccall] stc::perform ReservePort -Location 10.91.113.124/11/6 -RevokeOwner true
+Sun May 10 3:37:10 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {ReservePortCommand 5} -Location //10.91.113.124/11/6 -PortList {} -RevokeOwner true -AbortOnError true -State COMPLETED -Status Completed! -StartTime 1589105215.65778 -EndTime 1589105230.45478 -ElapsedTime 14797 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Reserving ports...} -ProgressMaxValue 2 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:10 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:37:10 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:37:10 PM India Standard Time 2020 [stccall] stc::get generator5 -children-generatorconfig
+Sun May 10 3:37:10 PM India Standard Time 2020 [debug] return value: generatorconfig5 
+Sun May 10 3:37:10 PM India Standard Time 2020 [stccall] stc::config generatorconfig5 -SchedulingMode RATE_BASED
+Sun May 10 3:37:10 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:10 PM India Standard Time 2020 [stccall] stc::create Port -under project1 -location 10.91.113.124/11/10 -name 10.91.113.124-11-10
+Sun May 10 3:37:10 PM India Standard Time 2020 [debug] return value: port6 
+Sun May 10 3:37:10 PM India Standard Time 2020 [stccall] stc::perform ReservePort -Location 10.91.113.124/11/10 -RevokeOwner true
+Sun May 10 3:37:11 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {ReservePortCommand 6} -Location //10.91.113.124/11/10 -PortList {} -RevokeOwner true -AbortOnError true -State COMPLETED -Status Completed! -StartTime 1589105230.92447 -EndTime 1589105231.67312 -ElapsedTime 749 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Reserving ports...} -ProgressMaxValue 2 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:11 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:37:11 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:37:11 PM India Standard Time 2020 [stccall] stc::get generator6 -children-generatorconfig
+Sun May 10 3:37:11 PM India Standard Time 2020 [debug] return value: generatorconfig6 
+Sun May 10 3:37:11 PM India Standard Time 2020 [stccall] stc::config generatorconfig6 -SchedulingMode RATE_BASED
+Sun May 10 3:37:11 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:11 PM India Standard Time 2020 [stccall] stc::perform setupPortMappings 
+Sun May 10 3:37:13 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {SetupPortMappingsCommand 3} -State COMPLETED -Status {} -StartTime 1589105232.02728 -EndTime 1589105233.39259 -ElapsedTime 1365 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling: _none_}
+Sun May 10 3:37:13 PM India Standard Time 2020 [hltcall] ::sth::interface_config {-mode config -port_handle port5 -create_host false -intf_mode ethernet -phy_mode fiber -scheduling_mode RATE_BASED -port_loadunit PERCENT_LINE_RATE -port_load 50 -enable_ping_response 0 -control_plane_mtu 1500 -flow_control false -speed ether1000 -data_path_mode normal -autonegotiation 1}
+Sun May 10 3:37:13 PM India Standard Time 2020 [debug] {Calling: sth::interface_config}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Generating session table}
+Sun May 10 3:37:13 PM India Standard Time 2020 [stccall] stc::get port5 -ActivePhy-targets
+Sun May 10 3:37:13 PM India Standard Time 2020 [debug] return value: ethernetfiber5 
+Sun May 10 3:37:13 PM India Standard Time 2020 [stccall] stc::get port5 -supportedPhys
+Sun May 10 3:37:13 PM India Standard Time 2020 [debug] return value: ETHERNET_COPPER|ETHERNET_FIBER 
+Sun May 10 3:37:13 PM India Standard Time 2020 [stccall] stc::get ethernetfiber5 -LineSpeed
+Sun May 10 3:37:13 PM India Standard Time 2020 [debug] return value: SPEED_1G 
+Sun May 10 3:37:13 PM India Standard Time 2020 [stccall] stc::get port5 -Online
+Sun May 10 3:37:13 PM India Standard Time 2020 [debug] return value: true 
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling interface_config for mode: config}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling: ::sth::Session::interface_config_config_modify}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling interface_config_config_modify}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling: processConfigCmd}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:13 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:13 PM India Standard Time 2020 [stccall] stc::get port5 -activephy-Targets
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value: ethernetfiber5 
+Sun May 10 3:37:14 PM India Standard Time 2020 [stccall] stc::get ethernetfiber5 -LineSpeed
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value: SPEED_1G 
+Sun May 10 3:37:14 PM India Standard Time 2020 [stccall] stc::get port5 -children-EthernetFiber
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value: ethernetfiber5 
+Sun May 10 3:37:14 PM India Standard Time 2020 [stccall] stc::config ethernetfiber5 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:14 PM India Standard Time 2020 [stccall] stc::perform PortSetupSetActivePhy -activephy ethernetfiber5
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {PortSetup: PortSetupSetActivePhyCommand 5} -ActivePhy ethernetfiber5 -State COMPLETED -Status {} -StartTime 1589105234.48957 -EndTime 1589105234.50776 -ElapsedTime 18 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:14 PM India Standard Time 2020 [stccall] stc::get ethernetfiber5 -isSpeedAutoNegotiationConfigurable
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value: true 
+Sun May 10 3:37:14 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:37:14 PM India Standard Time 2020 [stccall] stc::get generator5 -children-generatorconfig
+Sun May 10 3:37:14 PM India Standard Time 2020 [debug] return value: generatorconfig5 
+Sun May 10 3:37:15 PM India Standard Time 2020 [stccall] stc::config generatorconfig5 -SchedulingMode RATE_BASED
+Sun May 10 3:37:15 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:15 PM India Standard Time 2020 [stccall] stc::get port5 -AffiliationPort-Sources
+Sun May 10 3:37:15 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:15 PM India Standard Time 2020 [stccall] stc::get port5 -children-StreamBlock
+Sun May 10 3:37:15 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:15 PM India Standard Time 2020 [stccall] stc::perform ArpNdStart -HandleList port5
+Sun May 10 3:37:19 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Learning: Start ArpNd 9} -HandleList port5 -ArpNdState IDLE -WaitForArpToFinish true -ForceArp true -State COMPLETED -Status {None of the input items require ARP/ND at this time} -StartTime 1589105235.37013 -EndTime 1589105239.73602 -ElapsedTime 4366 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:19 PM India Standard Time 2020 [hltcall] ::sth::interface_config {-mode config -port_handle port6 -create_host false -intf_mode ethernet -phy_mode fiber -scheduling_mode RATE_BASED -port_loadunit PERCENT_LINE_RATE -port_load 50 -enable_ping_response 0 -control_plane_mtu 1500 -flow_control false -speed ether1000 -data_path_mode normal -autonegotiation 1}
+Sun May 10 3:37:19 PM India Standard Time 2020 [debug] {Calling: sth::interface_config}
+Sun May 10 3:37:19 PM India Standard Time 2020 [info] {Generating session table}
+Sun May 10 3:37:19 PM India Standard Time 2020 [stccall] stc::get port6 -ActivePhy-targets
+Sun May 10 3:37:19 PM India Standard Time 2020 [debug] return value: ethernetfiber6 
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::get port6 -supportedPhys
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: ETHERNET_COPPER|ETHERNET_FIBER 
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::get ethernetfiber6 -LineSpeed
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: SPEED_1G 
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::get port6 -Online
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: true 
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling interface_config for mode: config}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling: ::sth::Session::interface_config_config_modify}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling interface_config_config_modify}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling: processConfigCmd}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:20 PM India Standard Time 2020 [info] {Calling processConfigFwdCmd}
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::get port6 -activephy-Targets
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: ethernetfiber6 
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::get ethernetfiber6 -LineSpeed
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: SPEED_1G 
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::get port6 -children-EthernetFiber
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: ethernetfiber6 
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::config ethernetfiber6 -Mtu 1500 -FlowControl FALSE -DataPathMode NORMAL -AutoNegotiation true
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::perform PortSetupSetActivePhy -activephy ethernetfiber6
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {PortSetup: PortSetupSetActivePhyCommand 6} -ActivePhy ethernetfiber6 -State COMPLETED -Status {} -StartTime 1589105240.83802 -EndTime 1589105240.85364 -ElapsedTime 16 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:20 PM India Standard Time 2020 [stccall] stc::get ethernetfiber6 -isSpeedAutoNegotiationConfigurable
+Sun May 10 3:37:20 PM India Standard Time 2020 [debug] return value: true 
+Sun May 10 3:37:21 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:37:21 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:37:21 PM India Standard Time 2020 [stccall] stc::get generator6 -children-generatorconfig
+Sun May 10 3:37:21 PM India Standard Time 2020 [debug] return value: generatorconfig6 
+Sun May 10 3:37:21 PM India Standard Time 2020 [stccall] stc::config generatorconfig6 -SchedulingMode RATE_BASED
+Sun May 10 3:37:21 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:21 PM India Standard Time 2020 [stccall] stc::get port6 -AffiliationPort-Sources
+Sun May 10 3:37:21 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:21 PM India Standard Time 2020 [stccall] stc::get port6 -children-StreamBlock
+Sun May 10 3:37:21 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:21 PM India Standard Time 2020 [stccall] stc::perform ArpNdStart -HandleList port6
+Sun May 10 3:37:21 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Learning: Start ArpNd 10} -HandleList port6 -ArpNdState IDLE -WaitForArpToFinish true -ForceArp true -State COMPLETED -Status {None of the input items require ARP/ND at this time} -StartTime 1589105241.62509 -EndTime 1589105241.6407 -ElapsedTime 16 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:21 PM India Standard Time 2020 [hltcall] ::sth::traffic_config {-mode create -port_handle port5 -l2_encap ethernet_ii -l3_protocol ipv4 -ip_id 0 -ip_src_addr 192.85.1.2 -ip_dst_addr 192.0.0.1 -ip_ttl 255 -ip_hdr_length 5 -ip_protocol 253 -ip_fragment_offset 0 -ip_mbz 0 -ip_precedence 0 -ip_tos_field 0 -mac_dst_mode increment -mac_dst_repeat_count 0 -mac_dst_count 50 -mac_src_count 50 -mac_src_mode increment -mac_src_repeat_count 0 -mac_src 00:10:94:00:00:02 -mac_dst 00:00:01:00:00:01 -enable_control_plane 0 -l3_length 4982 -name StreamBlock_11 -fill_type constant -fcs_error 0 -fill_value 0 -frame_size 5000 -traffic_state 1 -high_speed_result_analysis 1 -length_mode fixed -dest_port_list port6 -tx_port_sending_traffic_to_self_en false -disable_signature 0 -enable_stream_only_gen 1 -pkts_per_burst 1 -inter_stream_gap_unit bytes -burst_loop_count 6000 -transmit_mode continuous -inter_stream_gap 12 -rate_mbps 800 -mac_discovery_gw 192.85.1.1 -enable_stream false}
+Sun May 10 3:37:21 PM India Standard Time 2020 [debug] processHLTporthandle: Calling stc::create streamBlock port5 retHandle
+Sun May 10 3:37:21 PM India Standard Time 2020 [stccall] ::stc::create streamBlock -under port5 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+Sun May 10 3:37:22 PM India Standard Time 2020 [debug] return value: streamblock5 
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processHLTporthandle: stc::create. Handle is streamblock5
+Sun May 10 3:37:22 PM India Standard Time 2020 [stccall] stc::perform StreamBlockUpdate -streamblock streamblock5
+Sun May 10 3:37:22 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {StreamBlockUpdateCommand 9} -StreamBlock streamblock5 -State COMPLETED -Status {} -StartTime 1589105242.14888 -EndTime 1589105242.18665 -ElapsedTime 38 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Updating generator load information for 10.91.113.124-11-6 //11/6} -ProgressMaxValue 1 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processHLTporthandle: update streamblock streamblock5 passed. -parent system1 -Name {StreamBlockUpdateCommand 9} -StreamBlock streamblock5 -State COMPLETED -Status {} -StartTime 1589105242.14888 -EndTime 1589105242.18665 -ElapsedTime 38 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Updating generator load information for 10.91.113.124-11-6 //11/6} -ProgressMaxValue 1 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:22 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children
+Sun May 10 3:37:22 PM India Standard Time 2020 [debug] return value: ethernet:ethernetii35 ipv4:ipv423 
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processHLTporthandle: streamblock5 -children ethernet:ethernetii35 ipv4:ipv423 
+Sun May 10 3:37:22 PM India Standard Time 2020 [stccall] ::stc::delete ethernet:ethernetii35
+Sun May 10 3:37:22 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processHLTporthandle: ::stc::delete ethernet:ethernetii35 passed.   
+Sun May 10 3:37:22 PM India Standard Time 2020 [stccall] ::stc::delete ipv4:ipv423
+Sun May 10 3:37:22 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processHLTporthandle: ::stc::delete ipv4:ipv423 passed.   
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processHLTporthandle for port_handle 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for fill_type 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for fill_value 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processLengthMode for length_mode 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processLengthMode for l3_length 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processLengthMode for frame_size 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for tx_port_sending_traffic_to_self_en 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processLoadSwitches HLT: rate_mbps 	 STC: -LoadUnit MEGABITS_PER_SECOND -Load 800
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processLoadSwitches for rate_mbps 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for name 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for fcs_error 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for traffic_state 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for dest_port_list 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processCommonSwitches for disable_signature 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. pkts_per_burst will be processed along with transmit_mode 
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches for pkts_per_burst 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. inter_stream_gap_unit will be processed along with transmit_mode 
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches for inter_stream_gap_unit 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. burst_loop_count will be processed along with transmit_mode 
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches for burst_loop_count 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. inter_stream_gap will be processed along with transmit_mode 
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitModeSwitches for inter_stream_gap 	 PASSED.
+Sun May 10 3:37:22 PM India Standard Time 2020 [warn] processTransmitMode. Setting the value for pkts_per_burst to 1. Ignoring any value entered by the user.
+Sun May 10 3:37:22 PM India Standard Time 2020 [info] processTransmitMode HLT: pkts_per_burst 	 STC: -BurstSize 1
+Sun May 10 3:37:22 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:37:22 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:37:22 PM India Standard Time 2020 [stccall] stc::get generator5 -children-generatorconfig
+Sun May 10 3:37:22 PM India Standard Time 2020 [debug] return value: generatorconfig5 
+Sun May 10 3:37:22 PM India Standard Time 2020 [stccall] stc::config generatorconfig5 -DurationMode CONTINUOUS -BurstSize 1
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processTransmitMode for transmit_mode 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl2 for mac_dst 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl2 for mac_src 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_dst_mode 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_dst_count 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_src_mode 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_dst_repeat_count 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_src_count 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_src_repeat_count 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_src_addr 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_dst_addr 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_protocol 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_hdr_length 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_id 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_ttl 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_fragment_offset 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processl3QosBits for ip_mbz 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processl3QosBits for ip_precedence 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processl3QosBits for ip_tos_field 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processCommonSwitches for high_speed_result_analysis 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processGroupProcessingl3 for mac_discovery_gw 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processControlPlane HLT: enable_control_plane 	 STC: -stcAttr 0
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processControlPlane for enable_control_plane 	 PASSED.
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processConfigGeneralAttributes HLT: length_mode 	 STC: FrameLengthMode
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processConfigGeneralAttributes HLT: l3_length 	 STC: FixedFrameLength
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processConfigGeneralAttributes HLT: frame_size 	 STC: FixedFrameLength
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] processConfigGeneralAttributes: Calling stc::config streamblock5 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_11 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port6 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+Sun May 10 3:37:23 PM India Standard Time 2020 [stccall] stc::config streamblock5 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_11 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port6 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processConfigGeneralAttributes: streamblock5 Success. 
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processCreateL2Encap HLT: mac_dst 	 STC: dstMac
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processCreateL2Encap HLT: mac_src 	 STC: srcMac
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] processCreateL2Encap: Calling stc::create ethernet:EthernetII streamblock5 -dstMac 00:00:01:00:00:01 -srcMac 00:10:94:00:00:02
+Sun May 10 3:37:23 PM India Standard Time 2020 [stccall] ::stc::create ethernet:EthernetII -under streamblock5 -dstMac 00:00:01:00:00:01 -srcMac 00:10:94:00:00:02
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] return value: ethernet:ethernetii37 
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processCreateL2Encap: stc::create Success. Handle is ethernet:ethernetii37
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] listl2SrcRangeModifier = mac_src_mode mac_src_step mac_src_count mac_src_repeat_count
+Sun May 10 3:37:23 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii37 -name
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] return value: ethernet_4129 
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii37 -name ethernet_4129 
+Sun May 10 3:37:23 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii37 -srcMac
+Sun May 10 3:37:23 PM India Standard Time 2020 [debug] return value: 00:10:94:00:00:02 
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii37 -srcMac 00:10:94:00:00:02 
+Sun May 10 3:37:23 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_mode 	 STC: ModifierMode
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_step 	 STC: StepValue
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_count 	 STC: RecycleCount
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_repeat_count 	 STC: RepeatCount
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children-randomModifier
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children-rangeModifier
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children-tableModifier
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] ::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.srcMac
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value: rangemodifier3 
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] ProcessModifier: Calling stc::config rangeModifier streamblock5 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::config rangemodifier3 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] listl2DstRangeModifier = mac_dst_mode mac_dst_step mac_dst_count mac_dst_repeat_count
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii37 -name
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value: ethernet_4129 
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii37 -name ethernet_4129 
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii37 -dstMac
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value: 00:00:01:00:00:01 
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii37 -dstMac 00:00:01:00:00:01 
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_mode 	 STC: ModifierMode
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_step 	 STC: StepValue
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_count 	 STC: RecycleCount
+Sun May 10 3:37:24 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_repeat_count 	 STC: RepeatCount
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children-randomModifier
+Sun May 10 3:37:24 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:24 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children-rangeModifier
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value: rangemodifier3 
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children-tableModifier
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] stc::get rangemodifier3 -OffsetReference
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value: ethernet_4129.srcMac 
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] ::stc::create rangeModifier -under streamblock5 -OffsetReference ethernet_4129.dstMac
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value: rangemodifier4 
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] ProcessModifier: Calling stc::config rangeModifier streamblock5 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] stc::config rangemodifier4 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] listl2VpiRangeModifier = 
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] listl2VpiRangeModifier = 
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] listl2VlanRangeModifier = 
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] listl2VlanPriorityRangeModifier = 
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] listl2OuterVlanRangeModifier = 
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] listl2OtherVlanRangeModifier = 
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] stc::perform StreamBlockUpdate -streamblock streamblock5
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {StreamBlockUpdateCommand 10} -StreamBlock streamblock5 -State COMPLETED -Status {} -StartTime 1589105245.56524 -EndTime 1589105245.59649 -ElapsedTime 31 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Updating generator load information for 10.91.113.124-11-6 //11/6} -ProgressMaxValue 1 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] stc::get streamblock5 -children
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value: rangemodifier3 rangemodifier4 ethernet:ethernetii38 
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_src_addr 	 STC: sourceAddr
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_dst_addr 	 STC: destAddr
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_protocol 	 STC: protocol
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_hdr_length 	 STC: ihl
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_id 	 STC: identification
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_ttl 	 STC: ttl
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_fragment_offset 	 STC: fragOffset
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] processCreateL3Protocol: Calling stc::create ipv4:IPv4 streamblock5 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] ::stc::create ipv4:IPv4 -under streamblock5 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+Sun May 10 3:37:25 PM India Standard Time 2020 [debug] return value: ipv4:ipv425 
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateL3Protocol: stc::create Success. Handle is ipv4:ipv425
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateQosHeader HLT: ip_mbz 	 STC: reserved
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateQosHeader HLT: ip_precedence 	 STC: precedence
+Sun May 10 3:37:25 PM India Standard Time 2020 [info] processCreateQosHeader HLT: ip_tos_field 	 STC: dBit tBit rbit mBit
+Sun May 10 3:37:25 PM India Standard Time 2020 [stccall] stc::get ipv4:ipv425 -children-tosDiffserv
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] processCreateQosHeader: Calling stc::create tosDiffserv ipv4:ipv425
+Sun May 10 3:37:26 PM India Standard Time 2020 [stccall] stc::create tosDiffserv -under ipv4:ipv425
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] return value: tosdiffserv15 
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] processCreateQosHeader: Calling stc::create tos tosdiffserv15 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+Sun May 10 3:37:26 PM India Standard Time 2020 [stccall] stc::create tos -under tosdiffserv15 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] return value: tos15 
+Sun May 10 3:37:26 PM India Standard Time 2020 [hltcall] ::sth::traffic_config {-mode create -port_handle port6 -l2_encap ethernet_ii -l3_protocol ipv4 -ip_id 0 -ip_src_addr 192.85.1.2 -ip_dst_addr 192.0.0.1 -ip_ttl 255 -ip_hdr_length 5 -ip_protocol 253 -ip_fragment_offset 0 -ip_mbz 0 -ip_precedence 0 -ip_tos_field 0 -mac_dst_mode increment -mac_dst_repeat_count 0 -mac_dst_count 50 -mac_src_count 50 -mac_src_mode increment -mac_src_repeat_count 0 -mac_src 00:00:01:00:00:01 -mac_dst 00:10:94:00:00:02 -enable_control_plane 0 -l3_length 4982 -name StreamBlock_12 -fill_type constant -fcs_error 0 -fill_value 0 -frame_size 5000 -traffic_state 1 -high_speed_result_analysis 1 -length_mode fixed -dest_port_list port5 -tx_port_sending_traffic_to_self_en false -disable_signature 0 -enable_stream_only_gen 1 -pkts_per_burst 1 -inter_stream_gap_unit bytes -burst_loop_count 6000 -transmit_mode continuous -inter_stream_gap 12 -rate_mbps 800 -mac_discovery_gw 192.85.1.1 -enable_stream false}
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] processHLTporthandle: Calling stc::create streamBlock port6 retHandle
+Sun May 10 3:37:26 PM India Standard Time 2020 [stccall] ::stc::create streamBlock -under port6 -frameconfig {} -EnableStreamOnlyGeneration true -ShowAllHeaders true
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] return value: streamblock6 
+Sun May 10 3:37:26 PM India Standard Time 2020 [info] processHLTporthandle: stc::create. Handle is streamblock6
+Sun May 10 3:37:26 PM India Standard Time 2020 [stccall] stc::perform StreamBlockUpdate -streamblock streamblock6
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {StreamBlockUpdateCommand 11} -StreamBlock streamblock6 -State COMPLETED -Status {} -StartTime 1589105246.73957 -EndTime 1589105246.789 -ElapsedTime 49 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Updating generator load information for 10.91.113.124-11-10 //11/10} -ProgressMaxValue 1 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:26 PM India Standard Time 2020 [info] processHLTporthandle: update streamblock streamblock6 passed. -parent system1 -Name {StreamBlockUpdateCommand 11} -StreamBlock streamblock6 -State COMPLETED -Status {} -StartTime 1589105246.73957 -EndTime 1589105246.789 -ElapsedTime 49 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Updating generator load information for 10.91.113.124-11-10 //11/10} -ProgressMaxValue 1 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:26 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children
+Sun May 10 3:37:26 PM India Standard Time 2020 [debug] return value: ethernet:ethernetii41 ipv4:ipv428 
+Sun May 10 3:37:26 PM India Standard Time 2020 [info] processHLTporthandle: streamblock6 -children ethernet:ethernetii41 ipv4:ipv428 
+Sun May 10 3:37:26 PM India Standard Time 2020 [stccall] ::stc::delete ethernet:ethernetii41
+Sun May 10 3:37:27 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processHLTporthandle: ::stc::delete ethernet:ethernetii41 passed.   
+Sun May 10 3:37:27 PM India Standard Time 2020 [stccall] ::stc::delete ipv4:ipv428
+Sun May 10 3:37:27 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processHLTporthandle: ::stc::delete ipv4:ipv428 passed.   
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processHLTporthandle for port_handle 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for fill_type 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for fill_value 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processLengthMode for length_mode 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processLengthMode for l3_length 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processLengthMode for frame_size 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for tx_port_sending_traffic_to_self_en 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processLoadSwitches HLT: rate_mbps 	 STC: -LoadUnit MEGABITS_PER_SECOND -Load 800
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processLoadSwitches for rate_mbps 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for name 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for fcs_error 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for traffic_state 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for dest_port_list 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for disable_signature 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. pkts_per_burst will be processed along with transmit_mode 
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches for pkts_per_burst 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. inter_stream_gap_unit will be processed along with transmit_mode 
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches for inter_stream_gap_unit 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. burst_loop_count will be processed along with transmit_mode 
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches for burst_loop_count 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches: transmit_mode exists in the definition. inter_stream_gap will be processed along with transmit_mode 
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitModeSwitches for inter_stream_gap 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [warn] processTransmitMode. Setting the value for pkts_per_burst to 1. Ignoring any value entered by the user.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitMode HLT: pkts_per_burst 	 STC: -BurstSize 1
+Sun May 10 3:37:27 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:37:27 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:37:27 PM India Standard Time 2020 [stccall] stc::get generator6 -children-generatorconfig
+Sun May 10 3:37:27 PM India Standard Time 2020 [debug] return value: generatorconfig6 
+Sun May 10 3:37:27 PM India Standard Time 2020 [stccall] stc::config generatorconfig6 -DurationMode CONTINUOUS -BurstSize 1
+Sun May 10 3:37:27 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processTransmitMode for transmit_mode 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl2 for mac_dst 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl2 for mac_src 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_dst_mode 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_dst_count 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_src_mode 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_dst_repeat_count 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_src_count 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processRangeModifierSwitches for mac_src_repeat_count 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_src_addr 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_dst_addr 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_protocol 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_hdr_length 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_id 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_ttl 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for ip_fragment_offset 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processl3QosBits for ip_mbz 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processl3QosBits for ip_precedence 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processl3QosBits for ip_tos_field 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processCommonSwitches for high_speed_result_analysis 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processGroupProcessingl3 for mac_discovery_gw 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processControlPlane HLT: enable_control_plane 	 STC: -stcAttr 0
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processControlPlane for enable_control_plane 	 PASSED.
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processConfigGeneralAttributes HLT: length_mode 	 STC: FrameLengthMode
+Sun May 10 3:37:27 PM India Standard Time 2020 [info] processConfigGeneralAttributes HLT: l3_length 	 STC: FixedFrameLength
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processConfigGeneralAttributes HLT: frame_size 	 STC: FixedFrameLength
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] processConfigGeneralAttributes: Calling stc::config streamblock6 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_12 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port5 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] stc::config streamblock6 -FrameLengthMode fixed -FixedFrameLength 5000 -FillType CONSTANT -ConstantFillPattern 0 -EnableTxPortSendingTrafficToSelf false -LoadUnit MEGABITS_PER_SECOND -Load 800 -name StreamBlock_12 -EnableFcsErrorInsertion 0 -Active 1 -ExpectedRx-targets port5 -InsertSig true -EnableHighSpeedResultAnalysis 1 -EnableControlPlane 0
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processConfigGeneralAttributes: streamblock6 Success. 
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2Encap HLT: mac_dst 	 STC: dstMac
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2Encap HLT: mac_src 	 STC: srcMac
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] processCreateL2Encap: Calling stc::create ethernet:EthernetII streamblock6 -dstMac 00:10:94:00:00:02 -srcMac 00:00:01:00:00:01
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] ::stc::create ethernet:EthernetII -under streamblock6 -dstMac 00:10:94:00:00:02 -srcMac 00:00:01:00:00:01
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value: ethernet:ethernetii43 
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2Encap: stc::create Success. Handle is ethernet:ethernetii43
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] listl2SrcRangeModifier = mac_src_mode mac_src_step mac_src_count mac_src_repeat_count
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii43 -name
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value: ethernet_4169 
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii43 -name ethernet_4169 
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii43 -srcMac
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value: 00:00:01:00:00:01 
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii43 -srcMac 00:00:01:00:00:01 
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_mode 	 STC: ModifierMode
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_step 	 STC: StepValue
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_count 	 STC: RecycleCount
+Sun May 10 3:37:28 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_src_repeat_count 	 STC: RepeatCount
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children-randomModifier
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children-rangeModifier
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children-tableModifier
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] ::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.srcMac
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] return value: rangemodifier5 
+Sun May 10 3:37:28 PM India Standard Time 2020 [debug] ProcessModifier: Calling stc::config rangeModifier streamblock6 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:28 PM India Standard Time 2020 [stccall] stc::config rangemodifier5 -data 00:00:01:00:00:01 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] listl2DstRangeModifier = mac_dst_mode mac_dst_step mac_dst_count mac_dst_repeat_count
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii43 -name
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value: ethernet_4169 
+Sun May 10 3:37:29 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii43 -name ethernet_4169 
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::get ethernet:ethernetii43 -dstMac
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value: 00:10:94:00:00:02 
+Sun May 10 3:37:29 PM India Standard Time 2020 [info] processCreateL2RangeModifier: ethernet:ethernetii43 -dstMac 00:10:94:00:00:02 
+Sun May 10 3:37:29 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_mode 	 STC: ModifierMode
+Sun May 10 3:37:29 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_step 	 STC: StepValue
+Sun May 10 3:37:29 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_count 	 STC: RecycleCount
+Sun May 10 3:37:29 PM India Standard Time 2020 [info] processCreateL2RangeModifier HLT: mac_dst_repeat_count 	 STC: RepeatCount
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children-randomModifier
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children-rangeModifier
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value: rangemodifier5 
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children-tableModifier
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::get rangemodifier5 -OffsetReference
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value: ethernet_4169.srcMac 
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] ::stc::create rangeModifier -under streamblock6 -OffsetReference ethernet_4169.dstMac
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value: rangemodifier6 
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] ProcessModifier: Calling stc::config rangeModifier streamblock6 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::config rangemodifier6 -data 00:10:94:00:00:02 -DataType NATIVE -EnableStream false -Mask 00:00:FF:FF:FF:FF -ModifierMode INCR -Offset 0 -RecycleCount 50 -RepeatCount 0 -StepValue 00:00:00:00:00:01
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] listl2VpiRangeModifier = 
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] listl2VpiRangeModifier = 
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] listl2VlanRangeModifier = 
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] listl2VlanPriorityRangeModifier = 
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] listl2OuterVlanRangeModifier = 
+Sun May 10 3:37:29 PM India Standard Time 2020 [debug] listl2OtherVlanRangeModifier = 
+Sun May 10 3:37:29 PM India Standard Time 2020 [stccall] stc::perform StreamBlockUpdate -streamblock streamblock6
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {StreamBlockUpdateCommand 12} -StreamBlock streamblock6 -State COMPLETED -Status {} -StartTime 1589105249.98871 -EndTime 1589105250.02647 -ElapsedTime 38 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {Updating generator load information for 10.91.113.124-11-10 //11/10} -ProgressMaxValue 1 -ProgressCurrentValue 1 -ProgressCancelled false -Active true 
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] stc::get streamblock6 -children
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value: rangemodifier5 rangemodifier6 ethernet:ethernetii44 
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_src_addr 	 STC: sourceAddr
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_dst_addr 	 STC: destAddr
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_protocol 	 STC: protocol
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_hdr_length 	 STC: ihl
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_id 	 STC: identification
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_ttl 	 STC: ttl
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol HLT: ip_fragment_offset 	 STC: fragOffset
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] processCreateL3Protocol: Calling stc::create ipv4:IPv4 streamblock6 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] ::stc::create ipv4:IPv4 -under streamblock6 -sourceAddr 192.85.1.2 -destAddr 192.0.0.1 -protocol 253 -ihl 5 -identification 0 -ttl 255 -fragOffset 0 -gateway 192.85.1.1
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value: ipv4:ipv430 
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateL3Protocol: stc::create Success. Handle is ipv4:ipv430
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateQosHeader HLT: ip_mbz 	 STC: reserved
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateQosHeader HLT: ip_precedence 	 STC: precedence
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] processCreateQosHeader HLT: ip_tos_field 	 STC: dBit tBit rbit mBit
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] stc::get ipv4:ipv430 -children-tosDiffserv
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] processCreateQosHeader: Calling stc::create tosDiffserv ipv4:ipv430
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] stc::create tosDiffserv -under ipv4:ipv430
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value: tosdiffserv18 
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] processCreateQosHeader: Calling stc::create tos tosdiffserv18 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] stc::create tos -under tosdiffserv18 -precedence 0 -dBit 0 -tBit 0 -rbit 0 -mBit 0
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value: tos18 
+Sun May 10 3:37:30 PM India Standard Time 2020 [hltcall] ::sth::traffic_control {-port_handle {port5 port6} -action run -duration 30}
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] {Calling sth::traffic_control}
+Sun May 10 3:37:30 PM India Standard Time 2020 [info] {Generating traffic table}
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] stc::get project1 -children-port
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value: port5 port6 
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:37:30 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:37:30 PM India Standard Time 2020 [stccall] stc::get generator5.GeneratorConfig -DurationMode
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: CONTINUOUS 
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get generator6.GeneratorConfig -DurationMode
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: CONTINUOUS 
+Sun May 10 3:37:31 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlPort_handle}
+Sun May 10 3:37:31 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlDuration}
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get generator5 -children-generatorconfig
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: generatorconfig5 
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:31 PM India Standard Time 2020 [info] port port5 configured to -DurationMode SECONDS -Duration 30
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get generator6 -children-generatorconfig
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: generatorconfig6 
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:31 PM India Standard Time 2020 [info] port port6 configured to -DurationMode SECONDS -Duration 30
+Sun May 10 3:37:31 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlAction}
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get project1 -children-port
+Sun May 10 3:37:31 PM India Standard Time 2020 [debug] return value: port5 port6 
+Sun May 10 3:37:31 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get generator5.GeneratorConfig -DurationMode
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: SECONDS 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get generator6.GeneratorConfig -DurationMode
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: SECONDS 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get project1 -children-trafficoptions
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: trafficoptions1 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::config trafficoptions1 -TrafficStartMode asynchronous
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get port5 -children-Analyzer
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: analyzer5 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get port6 -children-Analyzer
+Sun May 10 3:37:32 PM India Standard Time 2020 [debug] return value: analyzer6 
+Sun May 10 3:37:32 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:37:33 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:37:33 PM India Standard Time 2020 [stccall] stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+Sun May 10 3:37:33 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Start Analyzer 10} -AnalyzerList {analyzer5 analyzer6} -State COMPLETED -Status {Command finished.} -StartTime 1589105253.17683 -EndTime 1589105253.19244 -ElapsedTime 16 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:33 PM India Standard Time 2020 [stccall] stc::get port5 -affiliationport-Sources
+Sun May 10 3:37:33 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:33 PM India Standard Time 2020 [stccall] stc::get port5 -children-streamblock
+Sun May 10 3:37:33 PM India Standard Time 2020 [debug] return value: streamblock5 
+Sun May 10 3:37:33 PM India Standard Time 2020 [stccall] stc::perform ArpNdStart -HandleList streamblock5
+Sun May 10 3:37:40 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Learning: Start ArpNd 11} -HandleList streamblock5 -ArpNdState FAILURE -WaitForArpToFinish true -ForceArp true -State COMPLETED -Status {} -StartTime 1589105253.50292 -EndTime 1589105260.53535 -ElapsedTime 7032 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:40 PM India Standard Time 2020 [debug] ::stc::perform ArpNdStart -HandleList port5
+Sun May 10 3:37:40 PM India Standard Time 2020 [stccall] stc::get port6 -affiliationport-Sources
+Sun May 10 3:37:40 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:37:40 PM India Standard Time 2020 [stccall] stc::get port6 -children-streamblock
+Sun May 10 3:37:40 PM India Standard Time 2020 [debug] return value: streamblock6 
+Sun May 10 3:37:40 PM India Standard Time 2020 [stccall] stc::perform ArpNdStart -HandleList streamblock6
+Sun May 10 3:37:47 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Learning: Start ArpNd 12} -HandleList streamblock6 -ArpNdState FAILURE -WaitForArpToFinish true -ForceArp true -State COMPLETED -Status {} -StartTime 1589105260.76697 -EndTime 1589105267.35548 -ElapsedTime 6589 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:47 PM India Standard Time 2020 [debug] ::stc::perform ArpNdStart -HandleList port6
+Sun May 10 3:37:47 PM India Standard Time 2020 [stccall] stc::perform generatorstart -GeneratorList {generator5 generator6}
+Sun May 10 3:37:47 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Start Traffic 5} -GeneratorList {generator5 generator6} -LinksDownOnAllPorts false -State COMPLETED -Status {} -StartTime 1589105267.47135 -EndTime 1589105267.72558 -ElapsedTime 254 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:37:47 PM India Standard Time 2020 [info] {SUCCESS: Connect: {status 1}}
+Sun May 10 3:38:47 PM India Standard Time 2020 [hltcall] ::sth::traffic_control {-port_handle {port5 port6} -action clear_stats}
+Sun May 10 3:38:47 PM India Standard Time 2020 [debug] {Calling sth::traffic_control}
+Sun May 10 3:38:47 PM India Standard Time 2020 [info] {Generating traffic table}
+Sun May 10 3:38:47 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlPort_handle}
+Sun May 10 3:38:47 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlAction}
+Sun May 10 3:38:47 PM India Standard Time 2020 [stccall] stc::perform ResultsClearAll -PortList {port5 port6}
+Sun May 10 3:38:48 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Clear All Results 3} -PortList {port5 port6} -State COMPLETED -Status {} -StartTime 1589105327.96626 -EndTime 1589105328.26711 -ElapsedTime 301 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:38:48 PM India Standard Time 2020 [info] {SUCCESS: Connect: {status 1}}
+Sun May 10 3:39:48 PM India Standard Time 2020 [hltcall] ::sth::traffic_control {-port_handle {port5 port6} -action run -duration 30}
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] {Calling sth::traffic_control}
+Sun May 10 3:39:48 PM India Standard Time 2020 [info] {Generating traffic table}
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::get project1 -children-port
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] return value: port5 port6 
+Sun May 10 3:39:48 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlPort_handle}
+Sun May 10 3:39:48 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlDuration}
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::get generator5 -children-generatorconfig
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] return value: generatorconfig5 
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::config generatorconfig5 -DurationMode SECONDS -Duration 30
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:39:48 PM India Standard Time 2020 [info] port port5 configured to -DurationMode SECONDS -Duration 30
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::get generator6 -children-generatorconfig
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] return value: generatorconfig6 
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::config generatorconfig6 -DurationMode SECONDS -Duration 30
+Sun May 10 3:39:48 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:39:48 PM India Standard Time 2020 [info] port port6 configured to -DurationMode SECONDS -Duration 30
+Sun May 10 3:39:48 PM India Standard Time 2020 [info] {Calling: ::sth::Traffic::processTraffic_controlAction}
+Sun May 10 3:39:48 PM India Standard Time 2020 [stccall] stc::get project1 -children-port
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: port5 port6 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get generator5.GeneratorConfig -DurationMode
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: SECONDS 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get generator6.GeneratorConfig -DurationMode
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: SECONDS 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get project1 -children-trafficoptions
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: trafficoptions1 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::config trafficoptions1 -TrafficStartMode asynchronous
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get port5 -children-Analyzer
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: analyzer5 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get port6 -children-Analyzer
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: analyzer6 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:39:49 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:39:49 PM India Standard Time 2020 [stccall] stc::perform analyzerstart -AnalyzerList {analyzer5 analyzer6}
+Sun May 10 3:39:50 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Start Analyzer 12} -AnalyzerList {analyzer5 analyzer6} -State COMPLETED -Status {Command finished.} -StartTime 1589105389.99851 -EndTime 1589105390.01413 -ElapsedTime 16 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:39:50 PM India Standard Time 2020 [stccall] stc::perform generatorstart -GeneratorList {generator5 generator6}
+Sun May 10 3:39:50 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {Start Traffic 6} -GeneratorList {generator5 generator6} -LinksDownOnAllPorts false -State COMPLETED -Status {} -StartTime 1589105390.09892 -EndTime 1589105390.33036 -ElapsedTime 231 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:39:50 PM India Standard Time 2020 [info] {SUCCESS: Connect: {status 1}}
+Sun May 10 3:40:50 PM India Standard Time 2020 [hltcall] ::sth::traffic_stats {-port_handle {port5 port6} -mode all}
+Sun May 10 3:40:50 PM India Standard Time 2020 [hltcall] ::sth::traffic_stats_imp {-port_handle {port5 port6} -mode all}
+Sun May 10 3:40:50 PM India Standard Time 2020 [debug] {Calling sth::traffic_stats}
+Sun May 10 3:40:50 PM India Standard Time 2020 [info] {Generating traffic table}
+Sun May 10 3:40:50 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:40:50 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:40:50 PM India Standard Time 2020 [stccall] stc::get generator5 -State
+Sun May 10 3:40:50 PM India Standard Time 2020 [debug] return value: STOPPED 
+Sun May 10 3:40:50 PM India Standard Time 2020 [warn] No DB File is saved after traffic stopped, so the real time results return
+Sun May 10 3:40:50 PM India Standard Time 2020 [debug] Subscribe aggregate_rxjoin Results...
+Sun May 10 3:40:50 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port5}  -ConfigType Analyzer  -resulttype AnalyzerPortResults  -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+Sun May 10 3:40:51 PM India Standard Time 2020 [debug] return value: resultdataset21 
+Sun May 10 3:40:51 PM India Standard Time 2020 [debug] Subscribe aggregate_txjoin Results...
+Sun May 10 3:40:51 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port5}  -ConfigType Generator  -resulttype GeneratorPortResults  -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+Sun May 10 3:40:51 PM India Standard Time 2020 [debug] return value: resultdataset22 
+Sun May 10 3:40:51 PM India Standard Time 2020 [debug] Subscribe out_of_filter Results...
+Sun May 10 3:40:51 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port5}  -ConfigType Analyzer  -resulttype OverflowResults  -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+Sun May 10 3:40:52 PM India Standard Time 2020 [debug] return value: resultdataset23 
+Sun May 10 3:40:52 PM India Standard Time 2020 [debug] Subscribe stream_rx Results...
+Sun May 10 3:40:52 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port5}  -ConfigType StreamBlock  -resulttype RxStreamBlockResults  -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+Sun May 10 3:40:53 PM India Standard Time 2020 [debug] return value: resultdataset24 
+Sun May 10 3:40:53 PM India Standard Time 2020 [stccall] stc::perform RefreshResultView -ResultDataSet resultdataset24
+Sun May 10 3:40:54 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {RefreshResultViewCommand 14} -ResultDataSet resultdataset24 -State COMPLETED -Status {Command Successful} -StartTime 1589105453.78989 -EndTime 1589105454.55611 -ElapsedTime 766 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:40:54 PM India Standard Time 2020 [debug] Subscribe stream_tx Results...
+Sun May 10 3:40:54 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port5}  -ConfigType StreamBlock  -resulttype TxStreamBlockResults  -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+Sun May 10 3:40:55 PM India Standard Time 2020 [debug] return value: resultdataset25 
+Sun May 10 3:40:55 PM India Standard Time 2020 [stccall] stc::sleep 3
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value: 0 
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get port5 -children-capture
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value: capture5 
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get capture5 -children-CaptureFilter
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value: capturefilter5 
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get capturefilter5 -children-CaptureAnalyzerFilter
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get resultdataset21 -TotalPageCount
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value: 1 
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get resultdataset21 -ResultHandleList
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value: analyzerportresults5 
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get analyzerportresults5 
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value: -parent analyzer5 -resultchild-Sources {analyzer5 resultdataset21} -Name {} -TotalFrameCount 597610 -TotalOctetCount 2988050000 -SigFrameCount 597610 -MinFrameLength 5000 -MaxFrameLength 5000 -PrbsFillOctetCount 0 -JumboFrameCount 597610 -PauseFrameCount 0 -Ipv4FrameCount 597610 -Ipv6FrameCount 0 -Ipv6OverIpv4FrameCount 0 -TcpFrameCount 0 -UdpFrameCount 0 -IcmpFrameCount 0 -VlanFrameCount 0 -MplsFrameCount 0 -FcsErrorFrameCount 0 -Ipv4ChecksumErrorCount 0 -TcpChecksumErrorCount 0 -UdpChecksumErrorCount 0 -UndersizeFrameCount 0 -OversizeFrameCount 0 -PrbsBitErrorCount 0 -PrbsBitErrorRatio 0 -HwFrameCount 0 -Trigger1Count 0 -Trigger2Count 0 -Trigger3Count 0 -Trigger4Count 0 -Trigger5Count 0 -Trigger6Count 0 -Trigger7Count 0 -Trigger8Count 0 -ComboTriggerCount 0 -Trigger1Name {} -Trigger2Name {} -Trigger3Name {} -Trigger4Name {} -Trigger5Name {} -Trigger6Name {} -Trigger7Name {} -Trigger8Name {} -TotalFrameRate 0 -TotalOctetRate 0 -TotalBitRate 0 -TotalBitCount 23904400000 -L1BitCount 24000017600 -L1BitRate 0 -L1BitRatePercent 0 -SigFrameRate 0 -PrbsFillOctetRate 0 -JumboFrameRate 0 -PauseFrameRate 0 -Ipv4FrameRate 0 -Ipv6FrameRate 0 -Ipv6OverIpv4FrameRate 0 -TcpFrameRate 0 -UdpFrameRate 0 -IcmpFrameRate 0 -VlanFrameRate 0 -MplsFrameRate 0 -FcsErrorFrameRate 0 -Ipv4ChecksumErrorRate 0 -TcpChecksumErrorRate 0 -UdpChecksumErrorRate 0 -UndersizeFrameRate 0 -OversizeFrameRate 0 -PrbsBitErrorRate 0 -Trigger1Rate 0 -Trigger2Rate 0 -Trigger3Rate 0 -Trigger4Rate 0 -Trigger5Rate 0 -Trigger6Rate 0 -Trigger7Rate 0 -Trigger8Rate 0 -ComboTriggerRate 0 -CounterTimestamp 0 -TotalCellCount 0 -TotalCellRate 0 -PfcFrameCount 0 -PfcFrameRate 0 -FcoeFrameCount 0 -FcoeFrameRate 0 -PfcPri0FrameCount null -PfcPri1FrameCount null -PfcPri2FrameCount null -PfcPri3FrameCount null -PfcPri4FrameCount null -PfcPri5FrameCount null -PfcPri6FrameCount null -PfcPri7FrameCount null -PfcPri0FrameRate null -PfcPri1FrameRate null -PfcPri2FrameRate null -PfcPri3FrameRate null -PfcPri4FrameRate null -PfcPri5FrameRate null -PfcPri6FrameRate null -PfcPri7FrameRate null -PfcPri0Quanta null -PfcPri1Quanta null -PfcPri2Quanta null -PfcPri3Quanta null -PfcPri4Quanta null -PfcPri5Quanta null -PfcPri6Quanta null -PfcPri7Quanta null -PrbsErrorFrameCount null -PrbsErrorFrameRate null -UserDefinedFrameCount1 null -UserDefinedFrameRate1 null -UserDefinedFrameCount2 null -UserDefinedFrameRate2 null -UserDefinedFrameCount3 null -UserDefinedFrameRate3 null -UserDefinedFrameCount4 null -UserDefinedFrameRate4 null -UserDefinedFrameCount5 null -UserDefinedFrameRate5 null -UserDefinedFrameCount6 null -UserDefinedFrameRate6 null -OutSeqFrameCount null -PreambleTotalBytes null -PreambleMinLength null -PreambleMaxLength null -DroppedFrameCount null -InOrderFrameCount null -ReorderedFrameCount null -DuplicateFrameCount null -LateFrameCount null -FirstArrivalTime null -LastArrivalTime null -Active true 
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get analyzerportresults5 -parent
+Sun May 10 3:40:58 PM India Standard Time 2020 [debug] return value: analyzer5 
+Sun May 10 3:40:58 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get generator5 -children-generatorportresults
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: generatorportresults5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get generatorportresults5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: -parent generator5 -resultchild-Sources {generator5 resultdataset22} -Name {} -TotalFrameCount 597610 -TotalOctetCount 2988050000 -TotalIpv4FrameCount 0 -TotalIpv6FrameCount 0 -TotalMplsFrameCount 0 -GeneratorFrameCount 597610 -GeneratorSigFrameCount 597610 -GeneratorOctetCount 2988050000 -GeneratorIpv4FrameCount 597610 -GeneratorIpv6FrameCount 0 -GeneratorVlanFrameCount 0 -GeneratorMplsFrameCount 0 -GeneratorCrcErrorFrameCount 0 -GeneratorL3ChecksumErrorCount 0 -GeneratorL4ChecksumErrorCount 0 -GeneratorUndersizeFrameCount 0 -GeneratorOversizeFrameCount 0 -GeneratorJumboFrameCount 597610 -GeneratorAbortFrameCount 0 -HwFrameCount 0 -TotalFrameRate 0 -TotalOctetRate 0 -TotalBitRate 0 -TotalBitCount 23904400000 -L1BitCount 24000017600 -L1BitRate 0 -L1BitRatePercent 0 -TotalIpv4FrameRate 0 -TotalIpv6FrameRate 0 -TotalMplsFrameRate 0 -GeneratorFrameRate 0 -GeneratorSigFrameRate 0 -GeneratorOctetRate 0 -GeneratorBitRate 0 -GeneratorIpv4FrameRate 0 -GeneratorIpv6FrameRate 0 -GeneratorVlanFrameRate 0 -GeneratorMplsFrameRate 0 -GeneratorCrcErrorFrameRate 0 -GeneratorL3ChecksumErrorRate 0 -GeneratorL4ChecksumErrorRate 0 -GeneratorUndersizeFrameRate 0 -GeneratorOversizeFrameRate 0 -GeneratorJumboFrameRate 0 -GeneratorAbortFrameRate 0 -CounterTimestamp 0 -TotalCellCount 0 -TotalCellRate 0 -PfcFrameCount 0 -PfcPri0FrameCount null -PfcPri1FrameCount null -PfcPri2FrameCount null -PfcPri3FrameCount null -PfcPri4FrameCount null -PfcPri5FrameCount null -PfcPri6FrameCount null -PfcPri7FrameCount null -TxDuration 30 -Active true 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get port5 -children-generator
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: generator5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get generator5 -state
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: STOPPED 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get port5 -children-analyzer
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: analyzer5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get analyzer5 -children-overflowresults
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: overflowresults5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get overflowresults5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: -parent analyzer5 -resultchild-Sources {analyzer5 resultdataset23} -Name {} -FrameCount 0 -OctetCount 0 -SigFrameCount 0 -MinFrameLength 0 -MaxFrameLength 0 -Ipv4ChecksumErrorCount 0 -TcpUdpChecksumErrorCount 0 -FcsErrorFrameCount 0 -FirstArrivalTime 0 -LastArrivalTime 0 -FrameRate 0 -OctetRate 0 -BitRate 0 -SigFrameRate 0 -Ipv4ChecksumErrorRate 0 -TcpUdpChecksumErrorRate 0 -FcsErrorFrameRate 0 -CounterTimestamp 0 -Active true 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get resultdataset24 -totalPageCount
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: 1 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get resultdataset24 -resultChild-targets
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: rxstreamblockresults5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get rxstreamblockresults5 -parent
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: streamblock5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get streamblock5 -parent
+Sun May 10 3:40:59 PM India Standard Time 2020 [debug] return value: port5 
+Sun May 10 3:40:59 PM India Standard Time 2020 [stccall] stc::get rxstreamblockresults5 
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value: -parent streamblock5 -resultchild-Sources {streamblock5 resultdataset24} -summaryresultchild-Targets rxstreamresults5 -Name {} -RxPort {10.91.113.124-11-10 //11/10} -PortStrayFrames NA -StreamIndex 0 -Comp32 0 -Comp16_1 0 -Comp16_2 0 -Comp16_3 0 -Comp16_4 0 -FrameCount 597610 -OctetCount 2988050000 -SigFrameCount 597610 -FcsErrorFrameCount 0 -InSeqFrameCount 0 -OutSeqFrameCount 0 -AvgLatency 84.977 -ShortTermAvgLatency N/A -MinLatency 83.02 -MaxLatency 88.85 -TotalLatency 5078332335 -SeqRunLength 0 -LastSeqNum 0 -ExpectedSeqNum 0 -DroppedFrameCount 0 -DroppedFramePercent 0 -InOrderFrameCount 0 -ReorderedFrameCount 0 -DuplicateFrameCount 0 -LateFrameCount 0 -MinFrameLength 5000 -MaxFrameLength 5000 -PrbsFillOctetCount 0 -PrbsBitErrorCount 0 -PrbsBitErrorRatio 0 -Ipv4ChecksumErrorCount 0 -TcpUdpChecksumErrorCount 0 -TotalJitter 0 -MinJitter 0 -MaxJitter 0 -AvgJitter N/A -ShortTermAvgJitter N/A -TotalInterarrivalTime 0 -AvgInterarrivalTime 0 -ShortTermAvgInterarrivalTime N/A -MinInterarrivalTime 0 -MaxInterarrivalTime 0 -FirstArrivalTime 0 -LastArrivalTime 0 -HistBin1Count 0 -HistBin2Count 0 -HistBin3Count 0 -HistBin4Count 0 -HistBin5Count 0 -HistBin6Count 0 -HistBin7Count 0 -HistBin8Count 0 -HistBin9Count 0 -HistBin10Count 0 -HistBin11Count 0 -HistBin12Count 0 -HistBin13Count 0 -HistBin14Count 0 -HistBin15Count 0 -HistBin16Count 0 -HistBin1Name {x < 20 (ns)} -HistBin2Name {20 <= x < 60 (ns)} -HistBin3Name {60 <= x < 140 (ns)} -HistBin4Name {140 <= x < 300 (ns)} -HistBin5Name {300 <= x < 620 (ns)} -HistBin6Name {620 <= x < 1260 (ns)} -HistBin7Name {1260 <= x < 2540 (ns)} -HistBin8Name {2540 <= x < 5100 (ns)} -HistBin9Name {5100 <= x < 10220 (ns)} -HistBin10Name {10220 <= x < 20460 (ns)} -HistBin11Name {20460 <= x < 40940 (ns)} -HistBin12Name {40940 <= x < 81900 (ns)} -HistBin13Name {81900 <= x < 163820 (ns)} -HistBin14Name {163820 <= x < 327660 (ns)} -HistBin15Name {327660 <= x < 655340 (ns)} -HistBin16Name {x >= 655340 (ns)} -FrameRate 0 -OctetRate 0 -BitRate 0 -SigFrameRate 0 -InSeqFrameRate 0 -OutSeqFrameRate 0 -FcsErrorFrameRate 0 -DroppedFrameRate 0 -DroppedFramePercentRate 0 -InOrderFrameRate 0 -ReorderedFrameRate 0 -DuplicateFrameRate 0 -LateFrameRate 0 -TotalJitterRate 0 -PrbsFillOctetRate 0 -PrbsBitErrorRate 0 -Ipv4ChecksumErrorRate 0 -TcpUdpChecksumErrorRate 0 -HistBin1Rate 0 -HistBin2Rate 0 -HistBin3Rate 0 -HistBin4Rate 0 -HistBin5Rate 0 -HistBin6Rate 0 -HistBin7Rate 0 -HistBin8Rate 0 -HistBin9Rate 0 -HistBin10Rate 0 -HistBin11Rate 0 -HistBin12Rate 0 -HistBin13Rate 0 -HistBin14Rate 0 -HistBin15Rate 0 -HistBin16Rate 0 -CounterTimestamp 0 -BitCount 23904400000 -L1BitCount 0 -L1BitRate 0 -CellCount 0 -CellRate 0 -Rfc4689AbsoluteAvgJitter N/A -PrbsErrorFrameCount 0 -PrbsErrorFrameRate 0 -Active true 
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::get resultdataset25 -totalPageCount
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value: 1 
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::get resultdataset25 -resultChild-targets
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value: txstreamblockresults5 
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::get txstreamblockresults5 -parent
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value: streamblock5 
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::get streamblock5 -parent
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value: port5 
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::get txstreamblockresults5 
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value: -parent streamblock5 -resultchild-Sources {streamblock5 resultdataset25} -Name {} -BlockId 0 -FrameCount 597610 -OctetCount 2988050000 -FrameRate 0 -OctetRate 0 -BitRate 0 -BitCount 23904400000 -L1BitCount 0 -L1BitRate 0 -CounterTimestamp 0 -CellCount 0 -CellRate 0 -Active true 
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::get streamblock5 -RunningState
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value: STOPPED 
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset22
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::delete resultdataset22
+Sun May 10 3:41:00 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:00 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset21
+Sun May 10 3:41:01 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:01 PM India Standard Time 2020 [stccall] stc::delete resultdataset21
+Sun May 10 3:41:01 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:01 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset23
+Sun May 10 3:41:01 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:01 PM India Standard Time 2020 [stccall] stc::delete resultdataset23
+Sun May 10 3:41:01 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:01 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset25
+Sun May 10 3:41:02 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:02 PM India Standard Time 2020 [stccall] stc::delete resultdataset25
+Sun May 10 3:41:02 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:02 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset24
+Sun May 10 3:41:02 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:02 PM India Standard Time 2020 [stccall] stc::delete resultdataset24
+Sun May 10 3:41:02 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:02 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:41:03 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:41:03 PM India Standard Time 2020 [stccall] stc::get generator6 -State
+Sun May 10 3:41:03 PM India Standard Time 2020 [debug] return value: STOPPED 
+Sun May 10 3:41:03 PM India Standard Time 2020 [warn] No DB File is saved after traffic stopped, so the real time results return
+Sun May 10 3:41:03 PM India Standard Time 2020 [debug] Subscribe aggregate_rxjoin Results...
+Sun May 10 3:41:03 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port6}  -ConfigType Analyzer  -resulttype AnalyzerPortResults  -viewAttributeList {TotalOctetCount PauseFrameCount Trigger2Rate VlanFrameCount TotalFrameCount PfcFrameRate UdpChecksumErrorRate VlanFrameRate Trigger3Count TotalFrameCount TotalBitRate TcpFrameCount PfcFrameCount SigFrameRate PrbsFillOctetRate Trigger7Count Trigger7Rate UdpChecksumErrorCount FcoeFrameCount MinFrameLength FcoeFrameRate Ipv4ChecksumErrorRate Trigger4Rate Ipv4FrameCount IcmpFrameCount IcmpFrameRate Trigger2Count TotalFrameCount PrbsBitErrorCount Trigger1Rate PrbsBitErrorRate MplsFrameRate TotalOctetCount JumboFrameRate Trigger6Count PfcFrameCount PauseFrameRate TotalFrameRate PfcFrameRate SigFrameCount UndersizeFrameCount MaxFrameLength TcpChecksumErrorCount SigFrameCount Trigger6Rate Trigger1Count Ipv6FrameCount FcoeFrameCount SigFrameRate FcsErrorFrameRate Trigger5Count OversizeFrameCount Trigger3Rate Ipv6FrameRate FcsErrorFrameCount UdpFrameRate TotalFrameRate MplsFrameCount Ipv6OverIpv4FrameRate TotalOctetRate PrbsFillOctetCount UdpFrameCount FcoeFrameRate TcpChecksumErrorCount Ipv6OverIpv4FrameCount Ipv4ChecksumErrorCount Trigger8Rate TotalOctetCount JumboFrameCount Ipv4FrameRate Trigger4Count PfcFrameCount ComboTriggerCount Trigger5Rate OversizeFrameRate Trigger8Count ComboTriggerRate UndersizeFrameRate}
+Sun May 10 3:41:03 PM India Standard Time 2020 [debug] return value: resultdataset26 
+Sun May 10 3:41:03 PM India Standard Time 2020 [debug] Subscribe aggregate_txjoin Results...
+Sun May 10 3:41:03 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port6}  -ConfigType Generator  -resulttype GeneratorPortResults  -viewAttributeList {TotalOctetCount TotalFrameRate GeneratorVlanFrameCount TotalFrameCount GeneratorIPv4FrameCount GeneratorL3ChecksumErrorRate GeneratorVlanFrameRate TotalFrameCount GeneratorBitRate GeneratorIPv6FrameCount GeneratorSigFrameRate GeneratorOctetRate GeneratorAbortFrameCount HwFrameCount GeneratorIpv4FrameCount GeneratorAbortFrameRate TotalFrameCount GeneratorMplsFrameRate GeneratorOctetCount GeneratorJumboFrameRate TotalFrameRate GeneratorSigFrameCount TotalOctetRate GeneratorSigFrameRate GeneratorCrcErrorFrameCount GeneratorL4ChecksumErrorCount GeneratorIpv6FrameCount GeneratorL4ChecksumErrorRate GeneratorCrcErrorFrameRate GeneratorOctetCount GeneratorOversizeFrameCount TotalOctetCount GeneratorIpv6FrameRate TotalFrameRate GeneratorFrameCount PfcFrameCount GeneratorSigFrameCount GeneratorFrameRate GeneratorMplsFrameCount TotalMplsFrameCount TotalMplsFrameRate GeneratorJumboFrameCount GeneratorIpv4FrameRate PfcFrameCount GeneratorL3ChecksumErrorCount GeneratorUndersizeFrameCount GeneratorOversizeFrameRate GeneratorUndersizeFrameRate}
+Sun May 10 3:41:04 PM India Standard Time 2020 [debug] return value: resultdataset27 
+Sun May 10 3:41:04 PM India Standard Time 2020 [debug] Subscribe out_of_filter Results...
+Sun May 10 3:41:04 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port6}  -ConfigType Analyzer  -resulttype OverflowResults  -viewAttributeList {OctetCount FrameCount BitRate MinFrameLength MaxFrameLength FrameRate}
+Sun May 10 3:41:04 PM India Standard Time 2020 [debug] return value: resultdataset28 
+Sun May 10 3:41:04 PM India Standard Time 2020 [debug] Subscribe stream_rx Results...
+Sun May 10 3:41:04 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port6}  -ConfigType StreamBlock  -resulttype RxStreamBlockResults  -viewAttributeList {HistBin13Rate HistBin12Count OctetCount HistBin14Rate HistBin13Count HistBin15Rate HistBin14Count HistBin15Count MaxLatency FrameCount DroppedFrameCount MinFrameLength RxPort PrbsBitErrorCount DuplicateFrameCount FirstArrivalTime FrameRate HistBin1Count HistBin2Count HistBin3Count HistBin4Count HistBin5Count MinLatency HistBin6Count SigFrameCount HistBin7Count AvgLatency HistBin1Rate HistBin8Count OutSeqFrameCount HistBin2Rate HistBin9Count SigFrameRate HistBin3Rate HistBin4Rate ReorderedFrameRate HistBin5Rate PrbsBitErrorRate HistBin6Rate HistBin7Rate HistBin8Rate HistBin9Rate OctetRate OutSeqFrameRate ReorderedFrameCount BitRate LastArrivalTime MinFrameLength HistBin10Rate MaxFrameLength HistBin11Rate HistBin10Count MaxFrameLength HistBin12Rate HistBin11Count}
+Sun May 10 3:41:05 PM India Standard Time 2020 [debug] return value: resultdataset29 
+Sun May 10 3:41:05 PM India Standard Time 2020 [stccall] stc::perform RefreshResultView -ResultDataSet resultdataset29
+Sun May 10 3:41:06 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {RefreshResultViewCommand 17} -ResultDataSet resultdataset29 -State COMPLETED -Status {Command Successful} -StartTime 1589105465.89635 -EndTime 1589105466.62141 -ElapsedTime 725 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName {} -ProgressMaxValue 0 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:41:06 PM India Standard Time 2020 [debug] Subscribe stream_tx Results...
+Sun May 10 3:41:06 PM India Standard Time 2020 [stccall] stc::subscribe -Parent project1  -ResultParent {port6}  -ConfigType StreamBlock  -resulttype TxStreamBlockResults  -viewAttributeList {OctetCount FrameCount BitRate FrameRate}
+Sun May 10 3:41:07 PM India Standard Time 2020 [debug] return value: resultdataset30 
+Sun May 10 3:41:07 PM India Standard Time 2020 [stccall] stc::sleep 3
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value: 0 
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get port6 -children-capture
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value: capture6 
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get capture6 -children-CaptureFilter
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value: capturefilter6 
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get capturefilter6 -children-CaptureAnalyzerFilter
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get resultdataset26 -TotalPageCount
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value: 1 
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get resultdataset26 -ResultHandleList
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value: analyzerportresults6 
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get analyzerportresults6 
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value: -parent analyzer6 -resultchild-Sources {analyzer6 resultdataset26} -Name {} -TotalFrameCount 597610 -TotalOctetCount 2988050000 -SigFrameCount 597610 -MinFrameLength 5000 -MaxFrameLength 5000 -PrbsFillOctetCount 0 -JumboFrameCount 597610 -PauseFrameCount 0 -Ipv4FrameCount 597610 -Ipv6FrameCount 0 -Ipv6OverIpv4FrameCount 0 -TcpFrameCount 0 -UdpFrameCount 0 -IcmpFrameCount 0 -VlanFrameCount 0 -MplsFrameCount 0 -FcsErrorFrameCount 0 -Ipv4ChecksumErrorCount 0 -TcpChecksumErrorCount 0 -UdpChecksumErrorCount 0 -UndersizeFrameCount 0 -OversizeFrameCount 0 -PrbsBitErrorCount 0 -PrbsBitErrorRatio 0 -HwFrameCount 0 -Trigger1Count 0 -Trigger2Count 0 -Trigger3Count 0 -Trigger4Count 0 -Trigger5Count 0 -Trigger6Count 0 -Trigger7Count 0 -Trigger8Count 0 -ComboTriggerCount 0 -Trigger1Name {} -Trigger2Name {} -Trigger3Name {} -Trigger4Name {} -Trigger5Name {} -Trigger6Name {} -Trigger7Name {} -Trigger8Name {} -TotalFrameRate 0 -TotalOctetRate 0 -TotalBitRate 0 -TotalBitCount 23904400000 -L1BitCount 24000017600 -L1BitRate 0 -L1BitRatePercent 0 -SigFrameRate 0 -PrbsFillOctetRate 0 -JumboFrameRate 0 -PauseFrameRate 0 -Ipv4FrameRate 0 -Ipv6FrameRate 0 -Ipv6OverIpv4FrameRate 0 -TcpFrameRate 0 -UdpFrameRate 0 -IcmpFrameRate 0 -VlanFrameRate 0 -MplsFrameRate 0 -FcsErrorFrameRate 0 -Ipv4ChecksumErrorRate 0 -TcpChecksumErrorRate 0 -UdpChecksumErrorRate 0 -UndersizeFrameRate 0 -OversizeFrameRate 0 -PrbsBitErrorRate 0 -Trigger1Rate 0 -Trigger2Rate 0 -Trigger3Rate 0 -Trigger4Rate 0 -Trigger5Rate 0 -Trigger6Rate 0 -Trigger7Rate 0 -Trigger8Rate 0 -ComboTriggerRate 0 -CounterTimestamp 0 -TotalCellCount 0 -TotalCellRate 0 -PfcFrameCount 0 -PfcFrameRate 0 -FcoeFrameCount 0 -FcoeFrameRate 0 -PfcPri0FrameCount null -PfcPri1FrameCount null -PfcPri2FrameCount null -PfcPri3FrameCount null -PfcPri4FrameCount null -PfcPri5FrameCount null -PfcPri6FrameCount null -PfcPri7FrameCount null -PfcPri0FrameRate null -PfcPri1FrameRate null -PfcPri2FrameRate null -PfcPri3FrameRate null -PfcPri4FrameRate null -PfcPri5FrameRate null -PfcPri6FrameRate null -PfcPri7FrameRate null -PfcPri0Quanta null -PfcPri1Quanta null -PfcPri2Quanta null -PfcPri3Quanta null -PfcPri4Quanta null -PfcPri5Quanta null -PfcPri6Quanta null -PfcPri7Quanta null -PrbsErrorFrameCount null -PrbsErrorFrameRate null -UserDefinedFrameCount1 null -UserDefinedFrameRate1 null -UserDefinedFrameCount2 null -UserDefinedFrameRate2 null -UserDefinedFrameCount3 null -UserDefinedFrameRate3 null -UserDefinedFrameCount4 null -UserDefinedFrameRate4 null -UserDefinedFrameCount5 null -UserDefinedFrameRate5 null -UserDefinedFrameCount6 null -UserDefinedFrameRate6 null -OutSeqFrameCount null -PreambleTotalBytes null -PreambleMinLength null -PreambleMaxLength null -DroppedFrameCount null -InOrderFrameCount null -ReorderedFrameCount null -DuplicateFrameCount null -LateFrameCount null -FirstArrivalTime null -LastArrivalTime null -Active true 
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get analyzerportresults6 -parent
+Sun May 10 3:41:10 PM India Standard Time 2020 [debug] return value: analyzer6 
+Sun May 10 3:41:10 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get generator6 -children-generatorportresults
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: generatorportresults6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get generatorportresults6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: -parent generator6 -resultchild-Sources {generator6 resultdataset27} -Name {} -TotalFrameCount 597610 -TotalOctetCount 2988050000 -TotalIpv4FrameCount 0 -TotalIpv6FrameCount 0 -TotalMplsFrameCount 0 -GeneratorFrameCount 597610 -GeneratorSigFrameCount 597610 -GeneratorOctetCount 2988050000 -GeneratorIpv4FrameCount 597610 -GeneratorIpv6FrameCount 0 -GeneratorVlanFrameCount 0 -GeneratorMplsFrameCount 0 -GeneratorCrcErrorFrameCount 0 -GeneratorL3ChecksumErrorCount 0 -GeneratorL4ChecksumErrorCount 0 -GeneratorUndersizeFrameCount 0 -GeneratorOversizeFrameCount 0 -GeneratorJumboFrameCount 597610 -GeneratorAbortFrameCount 0 -HwFrameCount 0 -TotalFrameRate 0 -TotalOctetRate 0 -TotalBitRate 0 -TotalBitCount 23904400000 -L1BitCount 24000017600 -L1BitRate 0 -L1BitRatePercent 0 -TotalIpv4FrameRate 0 -TotalIpv6FrameRate 0 -TotalMplsFrameRate 0 -GeneratorFrameRate 0 -GeneratorSigFrameRate 0 -GeneratorOctetRate 0 -GeneratorBitRate 0 -GeneratorIpv4FrameRate 0 -GeneratorIpv6FrameRate 0 -GeneratorVlanFrameRate 0 -GeneratorMplsFrameRate 0 -GeneratorCrcErrorFrameRate 0 -GeneratorL3ChecksumErrorRate 0 -GeneratorL4ChecksumErrorRate 0 -GeneratorUndersizeFrameRate 0 -GeneratorOversizeFrameRate 0 -GeneratorJumboFrameRate 0 -GeneratorAbortFrameRate 0 -CounterTimestamp 0 -TotalCellCount 0 -TotalCellRate 0 -PfcFrameCount 0 -PfcPri0FrameCount null -PfcPri1FrameCount null -PfcPri2FrameCount null -PfcPri3FrameCount null -PfcPri4FrameCount null -PfcPri5FrameCount null -PfcPri6FrameCount null -PfcPri7FrameCount null -TxDuration 30 -Active true 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get port6 -children-generator
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: generator6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get generator6 -state
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: STOPPED 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get port6 -children-analyzer
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: analyzer6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get analyzer6 -children-overflowresults
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: overflowresults6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get overflowresults6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: -parent analyzer6 -resultchild-Sources {analyzer6 resultdataset28} -Name {} -FrameCount 0 -OctetCount 0 -SigFrameCount 0 -MinFrameLength 0 -MaxFrameLength 0 -Ipv4ChecksumErrorCount 0 -TcpUdpChecksumErrorCount 0 -FcsErrorFrameCount 0 -FirstArrivalTime 0 -LastArrivalTime 0 -FrameRate 0 -OctetRate 0 -BitRate 0 -SigFrameRate 0 -Ipv4ChecksumErrorRate 0 -TcpUdpChecksumErrorRate 0 -FcsErrorFrameRate 0 -CounterTimestamp 0 -Active true 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get resultdataset29 -totalPageCount
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: 1 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get resultdataset29 -resultChild-targets
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: rxstreamblockresults6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get rxstreamblockresults6 -parent
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: streamblock6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get streamblock6 -parent
+Sun May 10 3:41:11 PM India Standard Time 2020 [debug] return value: port6 
+Sun May 10 3:41:11 PM India Standard Time 2020 [stccall] stc::get rxstreamblockresults6 
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value: -parent streamblock6 -resultchild-Sources {streamblock6 resultdataset29} -summaryresultchild-Targets rxstreamresults6 -Name {} -RxPort {10.91.113.124-11-6 //11/6} -PortStrayFrames NA -StreamIndex 0 -Comp32 0 -Comp16_1 0 -Comp16_2 0 -Comp16_3 0 -Comp16_4 0 -FrameCount 597610 -OctetCount 2988050000 -SigFrameCount 597610 -FcsErrorFrameCount 0 -InSeqFrameCount 0 -OutSeqFrameCount 0 -AvgLatency 84.712 -ShortTermAvgLatency N/A -MinLatency 80.89 -MaxLatency 87.76 -TotalLatency 5062483199 -SeqRunLength 0 -LastSeqNum 0 -ExpectedSeqNum 0 -DroppedFrameCount 0 -DroppedFramePercent 0 -InOrderFrameCount 0 -ReorderedFrameCount 0 -DuplicateFrameCount 0 -LateFrameCount 0 -MinFrameLength 5000 -MaxFrameLength 5000 -PrbsFillOctetCount 0 -PrbsBitErrorCount 0 -PrbsBitErrorRatio 0 -Ipv4ChecksumErrorCount 0 -TcpUdpChecksumErrorCount 0 -TotalJitter 0 -MinJitter 0 -MaxJitter 0 -AvgJitter N/A -ShortTermAvgJitter N/A -TotalInterarrivalTime 0 -AvgInterarrivalTime 0 -ShortTermAvgInterarrivalTime N/A -MinInterarrivalTime 0 -MaxInterarrivalTime 0 -FirstArrivalTime 0 -LastArrivalTime 0 -HistBin1Count 0 -HistBin2Count 0 -HistBin3Count 0 -HistBin4Count 0 -HistBin5Count 0 -HistBin6Count 0 -HistBin7Count 0 -HistBin8Count 0 -HistBin9Count 0 -HistBin10Count 0 -HistBin11Count 0 -HistBin12Count 0 -HistBin13Count 0 -HistBin14Count 0 -HistBin15Count 0 -HistBin16Count 0 -HistBin1Name {x < 20 (ns)} -HistBin2Name {20 <= x < 60 (ns)} -HistBin3Name {60 <= x < 140 (ns)} -HistBin4Name {140 <= x < 300 (ns)} -HistBin5Name {300 <= x < 620 (ns)} -HistBin6Name {620 <= x < 1260 (ns)} -HistBin7Name {1260 <= x < 2540 (ns)} -HistBin8Name {2540 <= x < 5100 (ns)} -HistBin9Name {5100 <= x < 10220 (ns)} -HistBin10Name {10220 <= x < 20460 (ns)} -HistBin11Name {20460 <= x < 40940 (ns)} -HistBin12Name {40940 <= x < 81900 (ns)} -HistBin13Name {81900 <= x < 163820 (ns)} -HistBin14Name {163820 <= x < 327660 (ns)} -HistBin15Name {327660 <= x < 655340 (ns)} -HistBin16Name {x >= 655340 (ns)} -FrameRate 0 -OctetRate 0 -BitRate 0 -SigFrameRate 0 -InSeqFrameRate 0 -OutSeqFrameRate 0 -FcsErrorFrameRate 0 -DroppedFrameRate 0 -DroppedFramePercentRate 0 -InOrderFrameRate 0 -ReorderedFrameRate 0 -DuplicateFrameRate 0 -LateFrameRate 0 -TotalJitterRate 0 -PrbsFillOctetRate 0 -PrbsBitErrorRate 0 -Ipv4ChecksumErrorRate 0 -TcpUdpChecksumErrorRate 0 -HistBin1Rate 0 -HistBin2Rate 0 -HistBin3Rate 0 -HistBin4Rate 0 -HistBin5Rate 0 -HistBin6Rate 0 -HistBin7Rate 0 -HistBin8Rate 0 -HistBin9Rate 0 -HistBin10Rate 0 -HistBin11Rate 0 -HistBin12Rate 0 -HistBin13Rate 0 -HistBin14Rate 0 -HistBin15Rate 0 -HistBin16Rate 0 -CounterTimestamp 0 -BitCount 23904400000 -L1BitCount 0 -L1BitRate 0 -CellCount 0 -CellRate 0 -Rfc4689AbsoluteAvgJitter N/A -PrbsErrorFrameCount 0 -PrbsErrorFrameRate 0 -Active true 
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::get resultdataset30 -totalPageCount
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value: 1 
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::get resultdataset30 -resultChild-targets
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value: txstreamblockresults6 
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::get txstreamblockresults6 -parent
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value: streamblock6 
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::get streamblock6 -parent
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value: port6 
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::get txstreamblockresults6 
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value: -parent streamblock6 -resultchild-Sources {streamblock6 resultdataset30} -Name {} -BlockId 0 -FrameCount 597610 -OctetCount 2988050000 -FrameRate 0 -OctetRate 0 -BitRate 0 -BitCount 23904400000 -L1BitCount 0 -L1BitRate 0 -CounterTimestamp 0 -CellCount 0 -CellRate 0 -Active true 
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::get streamblock6 -RunningState
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value: STOPPED 
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset27
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::delete resultdataset27
+Sun May 10 3:41:12 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:12 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset26
+Sun May 10 3:41:13 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:13 PM India Standard Time 2020 [stccall] stc::delete resultdataset26
+Sun May 10 3:41:13 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:13 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset28
+Sun May 10 3:41:13 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:13 PM India Standard Time 2020 [stccall] stc::delete resultdataset28
+Sun May 10 3:41:13 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:13 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset30
+Sun May 10 3:41:14 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:14 PM India Standard Time 2020 [stccall] stc::delete resultdataset30
+Sun May 10 3:41:14 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:14 PM India Standard Time 2020 [stccall] stc::unsubscribe resultdataset29
+Sun May 10 3:41:14 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:14 PM India Standard Time 2020 [stccall] stc::delete resultdataset29
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:15 PM India Standard Time 2020 [hltcall] ::sth::cleanup_session {-port_handle {port5 port6} -clean_dbfile 1}
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] {Calling: sth::cleanup_session}
+Sun May 10 3:41:15 PM India Standard Time 2020 [info] {Generating session table}
+Sun May 10 3:41:15 PM India Standard Time 2020 [info] {Calling: ::sth::Session::processCleanup_sessionPort_list port5 port6}
+Sun May 10 3:41:15 PM India Standard Time 2020 [hltcall] ::sth::traffic_config {-mode reset}
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stc::get project1 -children-port
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value: port5 port6 
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stc::get port5 -children-streamblock
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value: streamblock5 
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stc::get port6 -children-streamblock
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value: streamblock6 
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stc::perform DeleteCommand -ConfigList {streamblock5 streamblock6}
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value: -parent system1 -Name {DeleteCommand 317} -ConfigList {streamblock5 streamblock6} -WarnOnAdditionalDelete false -State COMPLETED -Status {} -StartTime 1589105475.4571 -EndTime 1589105475.47272 -ElapsedTime 16 -ProgressDisplayCounter true -ProgressStepsCount 1 -ProgressCurrentStep 1 -ProgressCurrentStepName Deleting... -ProgressMaxValue 2 -ProgressCurrentValue 0 -ProgressCancelled false -Active true 
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stc::get port5 -online
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value: true 
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stclib::bll::release 10.91.113.124/11/6
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stc::delete port5
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stc::get port6 -online
+Sun May 10 3:41:15 PM India Standard Time 2020 [debug] return value: true 
+Sun May 10 3:41:15 PM India Standard Time 2020 [stccall] stclib::bll::release 10.91.113.124/11/10
+Sun May 10 3:41:16 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:16 PM India Standard Time 2020 [stccall] stc::delete port6
+Sun May 10 3:41:16 PM India Standard Time 2020 [debug] return value:  
+Sun May 10 3:41:16 PM India Standard Time 2020 [stccall] stc::get system1 -children-physicalchassismanager
+Sun May 10 3:41:16 PM India Standard Time 2020 [debug] return value: physicalchassismanager1 
+Sun May 10 3:41:16 PM India Standard Time 2020 [stccall] stc::get physicalchassismanager1 -children-physicalchassis
+Sun May 10 3:41:16 PM India Standard Time 2020 [debug] return value: physicalchassis1 
+Sun May 10 3:41:16 PM India Standard Time 2020 [stccall] stc::get physicalchassis1 -Hostname
+Sun May 10 3:41:16 PM India Standard Time 2020 [debug] return value: 10.91.113.124 
+Sun May 10 3:41:16 PM India Standard Time 2020 [stccall] stc::disconnect 10.91.113.124
+Sun May 10 3:41:16 PM India Standard Time 2020 [debug] return value:  

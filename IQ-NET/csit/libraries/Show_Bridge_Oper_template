@@ -1,0 +1,8 @@
+Value Bridge_Domain_State (\S+(?=,))
+Value EVPN_State ((\S+))
+
+Start
+  ^Bridge group:.*state: ${Bridge_Domain_State}.*
+  ^.*EVPN, state: ${EVPN_State}.* -> Record
+
+EOF

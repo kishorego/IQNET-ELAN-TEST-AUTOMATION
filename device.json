@@ -1,0 +1,83 @@
+{
+  "Topology Info" : {
+                   "EPN_Nodes"  : 2
+  },
+  "Device Details" : {
+                    "R1" : {
+                      "device_type": "cisco_xr",
+                      "ip": "10.91.126.111",
+                      "port": "22",
+                      "username": "kgkulkarni",
+                      "password": "abc",
+                      "Bridge": {
+                        "bridge_group": "EPN-85882701-S1",
+                        "bridge-domain":"EPN-85882701-S1",
+                        "mac": {
+                          "maximum": 100,
+                          "action": "no-flood"
+                         },
+                        "mtu": 9208,
+                        "evi": 3201,
+                        "Num_Interfaces": 2,
+                        "Interface Details": {
+                          "Interface_Index1": {
+                            "Description": "LON_LON_LE12345",
+                            "index": "TenGigE0/0/0",
+                            "Sub_Interface": "False",
+                            "service_policy": {
+                              "Input": "BW-2040000Kbps-Class-STD-TG",
+                              "Output": "SHAPE-2260000Kbps-Class-STD-TG"
+                            }
+                          },
+                          "Interface_Index2": {
+                            "Description": "LON_LON_LE12346",
+                            "Index": "TenGigE0/0/0",
+                            "Sub_Interface": "False",
+                            "service_policy": {
+                              "Input": "BW-2040000Kbps-Class-STD-TG",
+                              "Output": "SHAPE-2260000Kbps-Class-STD-TG"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "R2" : {
+                      "device_type": "cisco_xr",
+                      "ip": "10.91.126.112",
+                      "port": "22",
+                      "username": "kgkulkarni",
+                      "password": "abc",
+                      "Bridge": {
+                        "bridge_group": "EPN-85882701-S1",
+                        "bridge-domain":"EPN-85882701-S1",
+                        "mac": {
+                          "maximum": 100,
+                          "action": "no-flood"
+                         },
+                        "mtu": 9208,
+                        "evi": 3201,
+                        "Num_Interfaces": 2,
+                        "Interface Details": {
+                          "Interface_Index1": {
+                            "Description": "LON_LON_LE12347",
+                            "Index": "TenGigE0/0/0",
+                            "Sub_Interface": "False",
+                            "service_policy": {
+                              "Input": "BW-2040000Kbps-Class-STD-TG",
+                              "Output": "SHAPE-2260000Kbps-Class-STD-TG"
+                            }
+                          },
+                          "Interface_Index2": {
+                            "Description": "LON_LON_LE12348",
+                            "Index": "TenGigE0/0/0",
+                            "Sub_Interface": "False",
+                            "service_policy": {
+                              "Input": "BW-2040000Kbps-Class-STD-TG",
+                              "Output": "SHAPE-2260000Kbps-Class-STD-TG"
+                            }
+                          }
+                        }
+                      }
+                    }
+  }
+}

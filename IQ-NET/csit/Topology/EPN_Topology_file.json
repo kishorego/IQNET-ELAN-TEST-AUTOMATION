@@ -1,0 +1,71 @@
+{
+    "Topology Info" : {
+                        "nodes"  : 2,
+                        "links"  : 1
+    },
+ 	"Device_Details": {
+      "R1": {
+        "device_type": "cisco_xr",
+        "ip": "10.91.126.199",
+        "port": "22",
+        "username": "kgkulkarni",
+        "password": "Ch@ll3nge"
+      },
+      "R2": {
+        "device_type": "cisco_xr",
+        "ip": "10.91.126.200",
+        "port": "22",
+        "username": "kgkulkarni",
+        "password": "Ch@ll3nge"
+      },
+      "R3": {
+        "device_type": "cisco_xr",
+        "ip": "10.91.126.196",
+        "port": "22",
+        "username": "kgkulkarni",
+        "password": "Ch@ll3nge"
+      },
+      "Accedian1": {
+        "device_type": "accedian",
+        "ip": "10.91.121.68",
+        "port": "22",
+        "username": "admin",
+        "password": "admin"
+      },
+      "Accedian2": {
+        "device_type": "accedian",
+        "ip": "10.91.121.71",
+        "port": "22",
+        "username": "admin",
+        "password": "admin"
+      }
+    },
+       "Interface_Details": {
+         "R1_Interfaces": {
+           "R1_Main_Interface": "gigabitEthernet 0/0/0/11",
+           "R1_Sub_Interface": "gigabitEthernet 0/0/0/11.4095"
+         },
+           "R2_Interfaces": {
+             "R2_Main_Interface": "gigabitEthernet 0/0/0/11",
+             "R2_Sub_Interface": "gigabitEthernet 0/0/0/11.4095"
+         },
+         "R3_Interfaces": {
+             "R3_Main_Interface": "gigabitEthernet 0/0/0/39",
+             "R3_Sub_Interface": "gigabitEthernet 0/0/0/13.100"
+         },
+         "Accedian1_Interfaces": {
+             "NNI_Interface": "1",
+             "UNI_Interface": "5"
+         },
+         "Accedian2_Interfaces": {
+             "NNI_Interface": "1",
+             "UNI_Interface": "5"
+         }
+       }
+       }
+
+
+
+
+
+

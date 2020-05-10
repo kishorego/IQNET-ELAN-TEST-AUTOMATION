@@ -1,0 +1,1650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190830 12:01:17.199" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\Softwares_mine\IQ-NET\csit\suites\P2P.robot" id="s1" name="P2P">
+<kw type="setup" name="Setup Actions" library="Resource">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Setup Actions done here</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:17.490" starttime="20190830 12:01:17.490"></status>
+</kw>
+<kw name="Get Data" library="Connect_devices">
+<assign>
+<var>${Topo_data}</var>
+</assign>
+<msg timestamp="20190830 12:01:17.491" level="INFO">${Topo_data} = {u'Device_Details': {u'R1': {u'username': u'smurugesan2', u'ip': u'10.91.126.120', u'password': u'Jan*1234', u'port': u'22', u'device_type': u'cisco_xr'}, u'R2': {u'username': u'smurugesan2', u'ip': u...</msg>
+<status status="PASS" endtime="20190830 12:01:17.491" starttime="20190830 12:01:17.490"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Topo_data}</arg>
+<arg>Device_Details</arg>
+</arguments>
+<assign>
+<var>${DEV_DICT}</var>
+</assign>
+<msg timestamp="20190830 12:01:17.491" level="INFO">${DEV_DICT} = {u'R1': {u'username': u'smurugesan2', u'ip': u'10.91.126.120', u'password': u'Jan*1234', u'port': u'22', u'device_type': u'cisco_xr'}, u'R2': {u'username': u'smurugesan2', u'ip': u'10.91.126.113', u'p...</msg>
+<status status="PASS" endtime="20190830 12:01:17.491" starttime="20190830 12:01:17.491"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Topo_data}</arg>
+<arg>Link_Details</arg>
+</arguments>
+<assign>
+<var>${LINK_DICT}</var>
+</assign>
+<msg timestamp="20190830 12:01:17.492" level="INFO">${LINK_DICT} = {u'Link_R1_R2_1': {u'R1': u'tenGigE0/0/0/30', u'R2': u'tenGigE0/0/0/30'}}</msg>
+<status status="PASS" endtime="20190830 12:01:17.492" starttime="20190830 12:01:17.491"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${LINK_DICT}</arg>
+<arg>Link_R1_R2_1</arg>
+</arguments>
+<assign>
+<var>${Link_R1_R2_1}</var>
+</assign>
+<msg timestamp="20190830 12:01:17.492" level="INFO">${Link_R1_R2_1} = {u'R1': u'tenGigE0/0/0/30', u'R2': u'tenGigE0/0/0/30'}</msg>
+<status status="PASS" endtime="20190830 12:01:17.492" starttime="20190830 12:01:17.492"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Link_R1_R2_1}</arg>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${PORT_R1_to_R2_1}</var>
+</assign>
+<msg timestamp="20190830 12:01:17.493" level="INFO">${PORT_R1_to_R2_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20190830 12:01:17.493" starttime="20190830 12:01:17.492"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${Link_R1_R2_1}</arg>
+<arg>R2</arg>
+</arguments>
+<assign>
+<var>${PORT_R2_to_R1_1}</var>
+</assign>
+<msg timestamp="20190830 12:01:17.493" level="INFO">${PORT_R2_to_R1_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20190830 12:01:17.493" starttime="20190830 12:01:17.493"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${DEV_DICT}</arg>
+<arg>R1</arg>
+</arguments>
+<assign>
+<var>${R1_DICT}</var>
+</assign>
+<msg timestamp="20190830 12:01:17.495" level="INFO">${R1_DICT} = {u'username': u'smurugesan2', u'ip': u'10.91.126.120', u'password': u'Jan*1234', u'port': u'22', u'device_type': u'cisco_xr'}</msg>
+<status status="PASS" endtime="20190830 12:01:17.495" starttime="20190830 12:01:17.494"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${PORT_R1_to_R2_1}</arg>
+</arguments>
+<msg timestamp="20190830 12:01:17.496" level="INFO">${PORT_R1_to_R2_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20190830 12:01:17.496" starttime="20190830 12:01:17.495"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${PORT_R2_to_R1_1}</arg>
+</arguments>
+<msg timestamp="20190830 12:01:17.497" level="INFO">${PORT_R2_to_R1_1} = tenGigE0/0/0/30</msg>
+<status status="PASS" endtime="20190830 12:01:17.497" starttime="20190830 12:01:17.496"></status>
+</kw>
+<kw name="Make Connection" library="Connect_devices">
+<arguments>
+<arg>${R1_DICT}</arg>
+</arguments>
+<assign>
+<var>${R1_net_connect}</var>
+</assign>
+<msg timestamp="20190830 12:01:27.930" level="INFO">&lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042887F0&gt;
+cisco_xr: RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:01:27.931" level="INFO">${R1_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042887F0&gt;</msg>
+<status status="PASS" endtime="20190830 12:01:27.931" starttime="20190830 12:01:17.497"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${R1_net_connect}</arg>
+</arguments>
+<msg timestamp="20190830 12:01:27.933" level="INFO">${R1_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042887F0&gt;</msg>
+<status status="PASS" endtime="20190830 12:01:27.933" starttime="20190830 12:01:27.932"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connection Establihed to RTR1</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:27.934" starttime="20190830 12:01:27.933"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${DEV_DICT}</arg>
+<arg>R2</arg>
+</arguments>
+<assign>
+<var>${R2_DICT}</var>
+</assign>
+<msg timestamp="20190830 12:01:27.936" level="INFO">${R2_DICT} = {u'username': u'smurugesan2', u'ip': u'10.91.126.113', u'password': u'Jan*1234', u'port': u'22', u'device_type': u'cisco_xr'}</msg>
+<status status="PASS" endtime="20190830 12:01:27.936" starttime="20190830 12:01:27.935"></status>
+</kw>
+<kw name="Make Connection" library="Connect_devices">
+<arguments>
+<arg>${R2_DICT}</arg>
+</arguments>
+<assign>
+<var>${R2_net_connect}</var>
+</assign>
+<msg timestamp="20190830 12:01:38.229" level="INFO">&lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042ADDA0&gt;
+cisco_xr: RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:01:38.230" level="INFO">${R2_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042ADDA0&gt;</msg>
+<status status="PASS" endtime="20190830 12:01:38.230" starttime="20190830 12:01:27.937"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${R2_net_connect}</arg>
+</arguments>
+<msg timestamp="20190830 12:01:38.231" level="INFO">${R2_net_connect} = &lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042ADDA0&gt;</msg>
+<status status="PASS" endtime="20190830 12:01:38.231" starttime="20190830 12:01:38.230"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Connection Establihed to RTR2</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:38.231" starttime="20190830 12:01:38.231"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:01:38.232" starttime="20190830 12:01:17.489"></status>
+</kw>
+<test id="s1-t1" name="Test P2P EPL service">
+<kw name="CONFIGURE INTERFACE" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${PORT_R1_to_R2_1}</arg>
+<arg>${interface_template}</arg>
+<arg>${R1_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>interface=${intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:38.235" starttime="20190830 12:01:38.235"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:01:49.851" level="INFO">config term
+
+Fri Aug 30 06:31:38.492 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#interface tenGigE0/0/0/30
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# description ABC123IfType[Access] LinkID[LON/LON/LE-500121-LA]
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# mtu 9100
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# service-policy output Infra-Egress account user-defined 26
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# lldp
+
+RP/0/RP0/CPU0:ar10.BLB(config-lldp)#  receive disable
+
+RP/0/RP0/CPU0:ar10.BLB(config-lldp)#  transmit disable
+
+RP/0/RP0/CPU0:ar10.BLB(config-lldp)# load-interval 30
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# ethernet loopback
+
+RP/0/RP0/CPU0:ar10.BLB(config-if-ethlb)#
+commit
+
+Fri Aug 30 06:31:44.138 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-if-ethlb)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:01:49.851" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:31:44.138 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-if-ethlb)#</msg>
+<status status="PASS" endtime="20190830 12:01:49.852" starttime="20190830 12:01:38.236"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:49.852" starttime="20190830 12:01:49.852"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:01:49.852" starttime="20190830 12:01:38.234"></status>
+</kw>
+<kw name="CONFIGURE INTERFACE" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${PORT_R2_to_R1_1}</arg>
+<arg>${interface_template}</arg>
+<arg>${R2_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>interface=${intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:49.853" starttime="20190830 12:01:49.853"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:01:59.021" level="INFO">config term
+
+Fri Aug 30 12:04:50.564 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#interface tenGigE0/0/0/30
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# description DEF123IfType[Access] LinkID[LON/LON/LE-500121-LB]
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# mtu 9100
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# service-policy output Infra-Egress account user-defined 26
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# lldp
+
+RP/0/RP0/CPU0:ar3.BLB(config-lldp)#  receive disable
+
+RP/0/RP0/CPU0:ar3.BLB(config-lldp)#  transmit disable
+
+RP/0/RP0/CPU0:ar3.BLB(config-lldp)# load-interval 30
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# ethernet loopback
+
+RP/0/RP0/CPU0:ar3.BLB(config-if-ethlb)#
+commit
+
+Fri Aug 30 12:04:54.388 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-if-ethlb)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:01:59.022" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:04:54.388 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-if-ethlb)#</msg>
+<status status="PASS" endtime="20190830 12:01:59.022" starttime="20190830 12:01:49.854"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:59.023" starttime="20190830 12:01:59.022"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:01:59.023" starttime="20190830 12:01:49.852"></status>
+</kw>
+<kw name="CONFIGURE SUB-INTERFACE" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${PORT_R1_to_R2_1}.${sub_interface_1}</arg>
+<arg>${sub_interface_template}</arg>
+<arg>${R1_sub_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>sub_interface=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:01:59.027" starttime="20190830 12:01:59.026"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:02:10.208" level="INFO">config term
+
+Fri Aug 30 06:31:59.274 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#interface tenGigE0/0/0/30.4095 l2transport
+
+RP/0/RP0/CPU0:ar10.BLB(config-subif)# description IfType[Access] LinkID[LON/LON/LE-500121-LA]
+
+RP/0/RP0/CPU0:ar10.BLB(config-subif)# encapsulation default
+
+RP/0/RP0/CPU0:ar10.BLB(config-subif)# ethernet cfm
+
+RP/0/RP0/CPU0:ar10.BLB(config-if-cfm)#  mep domain COLT-1 service LON_LON_LE-500121 mep-id 1
+
+RP/0/RP0/CPU0:ar10.BLB(config-if-cfm-mep)#  !
+
+RP/0/RP0/CPU0:ar10.BLB(config-if-cfm-mep)# !
+
+RP/0/RP0/CPU0:ar10.BLB(config-if-cfm-mep)# service-policy input BW-1Gbps-Class-B2
+
+RP/0/RP0/CPU0:ar10.BLB(config-subif)#!
+
+RP/0/RP0/CPU0:ar10.BLB(config-subif)#ethernet loopback permit internal
+
+RP/0/RP0/CPU0:ar10.BLB(config-subif)#end
+
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:ethernet loopback start local interface tenGigE0/0/0/30.4095 internal timeout none
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:config t
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:interface tenGigE0/0/0/30.4095 l2transport
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]: description IfType[Access] LinkID[LON/LON/LE-500121-LA]
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:
+commit
+
+Fri Aug 30 06:32:04.907 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:02:10.208" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:32:04.907 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:02:10.208" starttime="20190830 12:01:59.027"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:02:10.210" starttime="20190830 12:02:10.209"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:02:10.210" starttime="20190830 12:01:59.023"></status>
+</kw>
+<kw name="CONFIGURE SUB-INTERFACE" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${PORT_R2_to_R1_1}.${sub_interface_1}</arg>
+<arg>${sub_interface_template}</arg>
+<arg>${R2_sub_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>sub_interface=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:02:10.213" starttime="20190830 12:02:10.212"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:02:20.499" level="INFO">config term
+
+Fri Aug 30 12:05:10.926 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#interface tenGigE0/0/0/30.4095 l2transport
+
+RP/0/RP0/CPU0:ar3.BLB(config-subif)# description IfType[Access] LinkID[LON/LON/LE-500121-LB]
+
+RP/0/RP0/CPU0:ar3.BLB(config-subif)# encapsulation default
+
+RP/0/RP0/CPU0:ar3.BLB(config-subif)# ethernet cfm
+
+RP/0/RP0/CPU0:ar3.BLB(config-if-cfm)#  mep domain COLT-1 service LON_LON_LE-500121 mep-id 2
+
+RP/0/RP0/CPU0:ar3.BLB(config-if-cfm-mep)#  !
+
+RP/0/RP0/CPU0:ar3.BLB(config-if-cfm-mep)# !
+
+RP/0/RP0/CPU0:ar3.BLB(config-if-cfm-mep)# service-policy input BW-1Gbps-Class-B2
+
+RP/0/RP0/CPU0:ar3.BLB(config-subif)#!
+
+RP/0/RP0/CPU0:ar3.BLB(config-subif)#ethernet loopback permit internal
+
+RP/0/RP0/CPU0:ar3.BLB(config-subif)#end
+
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:ethernet loopback start local interface tenGigE0/0/0/30.4095 internal timeout none
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:config t
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:interface tenGigE0/0/0/30.4095 l2transport
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]: description IfType[Access] LinkID[LON/LON/LE-500121-LB]
+
+% Invalid input.
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:
+commit
+
+Fri Aug 30 12:05:14.621 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:02:20.499" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:05:14.621 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:02:20.499" starttime="20190830 12:02:10.213"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:02:20.500" starttime="20190830 12:02:20.500"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:02:20.500" starttime="20190830 12:02:10.211"></status>
+</kw>
+<kw name="CONFIGURE l2vpn" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${PORT_R1_to_R2_1}.${sub_interface_1}</arg>
+<arg>${l2vpn_template}</arg>
+<arg>${R1_l2vpn_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>attch_ckt_intf=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:02:20.502" starttime="20190830 12:02:20.502"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:02:54.568" level="INFO">config term
+
+Fri Aug 30 06:32:20.748 UTC
+Current Configuration Session  Line       User     Date                     Lock
+00001000-00000aec-00000005     SYSTEM     SYSTEM   Fri Aug 30 06:32:17 2019 
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#l2vpn
+
+RP/0/RP0/CPU0:ar10.BLB(config-l2vpn)# xconnect group LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar10.BLB(config-l2vpn-xc)#  p2p LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar10.BLB(config-l2vpn-xc-p2p)#   interface tenGigE0/0/0/30.4095
+
+RP/0/RP0/CPU0:ar10.BLB(config-l2vpn-xc-p2p)#   neighbor evpn evi 3551 target 3552 source 3553
+
+RP/0/RP0/CPU0:ar10.BLB(config-l2vpn-xc-p2p-pw)#
+commit
+
+Fri Aug 30 06:32:26.437 UTC
+System configuration operation in progress: Commit database consolidation.
+Please wait or use control-c to cancel this operation.........
+System configuration operation complete, commit proceeding.
+RP/0/RP0/CPU0:ar10.BLB(config-l2vpn-xc-p2p-pw)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:02:54.568" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:32:26.437 UTC
+System configuration operation in progress: Commit database consolidation.
+Please wait or use control-c to cancel this operation.........
+System configuration opera...</msg>
+<status status="PASS" endtime="20190830 12:02:54.568" starttime="20190830 12:02:20.502"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:02:54.569" starttime="20190830 12:02:54.569"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:02:54.570" starttime="20190830 12:02:20.501"></status>
+</kw>
+<kw name="CONFIGURE l2vpn" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${PORT_R2_to_R1_1}.${sub_interface_1}</arg>
+<arg>${l2vpn_template}</arg>
+<arg>${R2_l2vpn_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>attch_ckt_intf=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:02:54.573" starttime="20190830 12:02:54.572"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:01.663" level="INFO">config term
+
+Fri Aug 30 12:05:55.285 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#l2vpn
+
+RP/0/RP0/CPU0:ar3.BLB(config-l2vpn)# xconnect group LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar3.BLB(config-l2vpn-xc)#  p2p LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar3.BLB(config-l2vpn-xc-p2p)#   interface tenGigE0/0/0/30.4095
+
+RP/0/RP0/CPU0:ar3.BLB(config-l2vpn-xc-p2p)#   neighbor evpn evi 3551 target 3553 source 3552
+
+RP/0/RP0/CPU0:ar3.BLB(config-l2vpn-xc-p2p-pw)#
+commit
+
+Fri Aug 30 12:05:58.836 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-l2vpn-xc-p2p-pw)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:03:01.663" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:05:58.836 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-l2vpn-xc-p2p-pw)#</msg>
+<status status="PASS" endtime="20190830 12:03:01.663" starttime="20190830 12:02:54.573"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:01.664" starttime="20190830 12:03:01.663"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:03:01.664" starttime="20190830 12:02:54.570"></status>
+</kw>
+<kw name="CONFIGURE evpn" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${evpn_template}</arg>
+<arg>${R1_evpn_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:11.008" level="INFO">config term
+
+Fri Aug 30 06:33:01.910 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#evpn
+
+RP/0/RP0/CPU0:ar10.BLB(config-evpn)# evi 3551
+
+RP/0/RP0/CPU0:ar10.BLB(config-evpn-instance)#  bgp
+
+RP/0/RP0/CPU0:ar10.BLB(config-evpn-instance-bgp)#   rd 8220001:3554
+
+RP/0/RP0/CPU0:ar10.BLB(config-evpn-instance-bgp)#   route-target import 8220001:3551
+
+RP/0/RP0/CPU0:ar10.BLB(config-evpn-instance-bgp)#   route-target export 8220001:3551
+
+RP/0/RP0/CPU0:ar10.BLB(config-evpn-instance-bgp)#
+commit
+
+Fri Aug 30 06:33:07.520 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-evpn-instance-bgp)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:03:11.009" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:33:07.520 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-evpn-instance-bgp)#</msg>
+<status status="PASS" endtime="20190830 12:03:11.009" starttime="20190830 12:03:01.665"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:11.009" starttime="20190830 12:03:11.009"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:03:11.009" starttime="20190830 12:03:01.664"></status>
+</kw>
+<kw name="CONFIGURE evpn" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${evpn_template}</arg>
+<arg>${R2_evpn_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:18.197" level="INFO">config term
+
+Fri Aug 30 12:06:11.725 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#evpn
+
+RP/0/RP0/CPU0:ar3.BLB(config-evpn)# evi 3551
+
+RP/0/RP0/CPU0:ar3.BLB(config-evpn-instance)#  bgp
+
+RP/0/RP0/CPU0:ar3.BLB(config-evpn-instance-bgp)#   rd 8220001:3554
+
+RP/0/RP0/CPU0:ar3.BLB(config-evpn-instance-bgp)#   route-target import 8220001:3551
+
+RP/0/RP0/CPU0:ar3.BLB(config-evpn-instance-bgp)#   route-target export 8220001:3551
+
+RP/0/RP0/CPU0:ar3.BLB(config-evpn-instance-bgp)#
+commit
+
+Fri Aug 30 12:06:15.372 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-evpn-instance-bgp)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:03:18.198" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:06:15.372 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-evpn-instance-bgp)#</msg>
+<status status="PASS" endtime="20190830 12:03:18.198" starttime="20190830 12:03:11.010"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:18.202" starttime="20190830 12:03:18.201"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:03:18.203" starttime="20190830 12:03:11.009"></status>
+</kw>
+<kw name="CONFIGURE ethernet cfm" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${eth_cfm_template}</arg>
+<arg>${R1_eth_cfm_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:27.753" level="INFO">config term
+
+Fri Aug 30 06:33:18.451 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#ethernet cfm
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm)# domain COLT-1 level 1 id null
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn)#  service LON_LON_LE-500121 xconnect group LON_LON_LE-500121 p2p LON_LON_LE-500121 id icc-based LE XXX-5000121
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn-svc)#   continuity-check interval 1s
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn-svc)#   mep crosscheck
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-xcheck)#    mep-id 1
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-xcheck)#   !
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-xcheck)#   log continuity-check errors
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn-svc)#   log crosscheck errors
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn-svc)#   log continuity-check mep changes
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn-svc)#
+commit
+
+Fri Aug 30 06:33:24.064 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn-svc)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:03:27.754" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:33:24.064 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn-svc)#</msg>
+<status status="PASS" endtime="20190830 12:03:27.754" starttime="20190830 12:03:18.204"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:27.754" starttime="20190830 12:03:27.754"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:03:27.754" starttime="20190830 12:03:18.203"></status>
+</kw>
+<kw name="CONFIGURE ethernet cfm" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${eth_cfm_template}</arg>
+<arg>${R2_eth_cfm_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:35.072" level="INFO">config term
+
+Fri Aug 30 12:06:28.478 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#ethernet cfm
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm)# domain COLT-1 level 1 id null
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn)#  service LON_LON_LE-500121 xconnect group LON_LON_LE-500121 p2p LON_LON_LE-500121 id icc-based LE XXX-5000121
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn-svc)#   continuity-check interval 1s
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn-svc)#   mep crosscheck
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-xcheck)#    mep-id 2
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-xcheck)#   !
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-xcheck)#   log continuity-check errors
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn-svc)#   log crosscheck errors
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn-svc)#   log continuity-check mep changes
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn-svc)#
+commit
+
+Fri Aug 30 12:06:32.244 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn-svc)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:03:35.072" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:06:32.244 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn-svc)#</msg>
+<status status="PASS" endtime="20190830 12:03:35.073" starttime="20190830 12:03:27.756"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:35.073" starttime="20190830 12:03:35.073"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:03:35.073" starttime="20190830 12:03:27.755"></status>
+</kw>
+<kw name="SHOW COMMAND" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>show_eth_cfm_template</arg>
+<arg>${R1_eth_cfm_data}</arg>
+</arguments>
+<assign>
+<var>${show_result}</var>
+</assign>
+<kw name="Show Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${${template_name}}</arg>
+<arg>template_data=${template_data}</arg>
+<arg>textfsm_template=${template_name}</arg>
+</arguments>
+<assign>
+<var>${show_cmd_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:36.092" level="INFO">template_data == {'mep_id': '1', 'UMC': 'XXX-5000121', 'domain_level': '1', 'ICC': 'LE', 'service_name': 'LON_LON_LE-500121', 'xc_group': 'LON_LON_LE-500121', 'domain_name': 'COLT-1', 'p2p_xc_name': 'LON_LON_LE-500121'}
+template_name == show ethernet cfm services domain {{ component.domain_name }} service {{ component.service_name }}
+textfsm_template == show_eth_cfm_template</msg>
+<msg timestamp="20190830 12:03:36.092" level="INFO">${show_cmd_result} = Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+</msg>
+<status status="PASS" endtime="20190830 12:03:36.092" starttime="20190830 12:03:35.074"></status>
+</kw>
+<msg timestamp="20190830 12:03:36.093" level="INFO">${show_result} = Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+</msg>
+<status status="PASS" endtime="20190830 12:03:36.093" starttime="20190830 12:03:35.073"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${show_result}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:36.094" starttime="20190830 12:03:36.093"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>should contain</arg>
+<arg>${show_result}</arg>
+<arg>${local_mep_info}</arg>
+</arguments>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${show_result}</arg>
+<arg>${local_mep_info}</arg>
+</arguments>
+<msg timestamp="20190830 12:03:36.096" level="FAIL">'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Local MEPs: 1 total: all operational, no errors'</msg>
+<status status="FAIL" endtime="20190830 12:03:36.096" starttime="20190830 12:03:36.095"></status>
+</kw>
+<status status="FAIL" endtime="20190830 12:03:36.096" starttime="20190830 12:03:36.094"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>should contain</arg>
+<arg>${show_result}</arg>
+<arg>${peer_mep_info}</arg>
+</arguments>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${show_result}</arg>
+<arg>${peer_mep_info}</arg>
+</arguments>
+<msg timestamp="20190830 12:03:36.098" level="FAIL">'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Peer MEPs: 1 total: all operational, no errors'</msg>
+<status status="FAIL" endtime="20190830 12:03:36.098" starttime="20190830 12:03:36.097"></status>
+</kw>
+<status status="FAIL" endtime="20190830 12:03:36.098" starttime="20190830 12:03:36.096"></status>
+</kw>
+<kw name="SHOW COMMAND" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>show_eth_cfm_template</arg>
+<arg>${R2_eth_cfm_data}</arg>
+</arguments>
+<assign>
+<var>${show_result}</var>
+</assign>
+<kw name="Show Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${${template_name}}</arg>
+<arg>template_data=${template_data}</arg>
+<arg>textfsm_template=${template_name}</arg>
+</arguments>
+<assign>
+<var>${show_cmd_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:36.904" level="INFO">template_data == {'mep_id': '2', 'UMC': 'XXX-5000121', 'domain_level': '1', 'ICC': 'LE', 'service_name': 'LON_LON_LE-500121', 'xc_group': 'LON_LON_LE-500121', 'domain_name': 'COLT-1', 'p2p_xc_name': 'LON_LON_LE-500121'}
+template_name == show ethernet cfm services domain {{ component.domain_name }} service {{ component.service_name }}
+textfsm_template == show_eth_cfm_template</msg>
+<msg timestamp="20190830 12:03:36.905" level="INFO">${show_cmd_result} = Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+</msg>
+<status status="PASS" endtime="20190830 12:03:36.905" starttime="20190830 12:03:36.099"></status>
+</kw>
+<msg timestamp="20190830 12:03:36.905" level="INFO">${show_result} = Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+</msg>
+<status status="PASS" endtime="20190830 12:03:36.905" starttime="20190830 12:03:36.099"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${show_result}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:36.906" starttime="20190830 12:03:36.905"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>should contain</arg>
+<arg>${show_result}</arg>
+<arg>${local_mep_info}</arg>
+</arguments>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${show_result}</arg>
+<arg>${local_mep_info}</arg>
+</arguments>
+<msg timestamp="20190830 12:03:36.908" level="FAIL">'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Local MEPs: 1 total: all operational, no errors'</msg>
+<status status="FAIL" endtime="20190830 12:03:36.908" starttime="20190830 12:03:36.907"></status>
+</kw>
+<status status="FAIL" endtime="20190830 12:03:36.908" starttime="20190830 12:03:36.906"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>should contain</arg>
+<arg>${show_result}</arg>
+<arg>${peer_mep_info}</arg>
+</arguments>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${show_result}</arg>
+<arg>${peer_mep_info}</arg>
+</arguments>
+<msg timestamp="20190830 12:03:36.909" level="FAIL">'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Peer MEPs: 1 total: all operational, no errors'</msg>
+<status status="FAIL" endtime="20190830 12:03:36.909" starttime="20190830 12:03:36.909"></status>
+</kw>
+<status status="FAIL" endtime="20190830 12:03:36.909" starttime="20190830 12:03:36.908"></status>
+</kw>
+<kw name="UNCONFIGURE ethernet cfm" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${unconfig_eth_cfm_template}</arg>
+<arg>${R1_eth_cfm_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:46.479" level="INFO">config term
+
+Fri Aug 30 06:33:37.155 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#ethernet cfm
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm)# domain COLT-1 level 1 id null
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn)#  no service LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn)#
+commit
+
+Fri Aug 30 06:33:42.791 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:03:46.481" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:33:42.791 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-cfm-dmn)#</msg>
+<status status="PASS" endtime="20190830 12:03:46.483" starttime="20190830 12:03:36.911"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:46.488" starttime="20190830 12:03:46.485"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:03:46.489" starttime="20190830 12:03:36.910"></status>
+</kw>
+<kw name="UNCONFIGURE ethernet cfm" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${unconfig_eth_cfm_template}</arg>
+<arg>${R2_eth_cfm_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:03:53.476" level="INFO">config term
+
+Fri Aug 30 12:06:47.207 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#ethernet cfm
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm)# domain COLT-1 level 1 id null
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn)#  no service LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn)#
+commit
+
+Fri Aug 30 12:06:50.657 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:03:53.476" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:06:50.657 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-cfm-dmn)#</msg>
+<status status="PASS" endtime="20190830 12:03:53.476" starttime="20190830 12:03:46.493"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:03:53.478" starttime="20190830 12:03:53.477"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:03:53.478" starttime="20190830 12:03:46.490"></status>
+</kw>
+<kw name="UNCONFIGURE evpn" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${unconfig_evpn_template}</arg>
+<arg>${R1_evpn_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:00.973" level="INFO">config term
+
+Fri Aug 30 06:33:53.727 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#no evpn evi 3551
+
+RP/0/RP0/CPU0:ar10.BLB(config)#
+commit
+
+Fri Aug 30 06:33:57.289 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:04:00.974" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:33:57.289 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:04:00.974" starttime="20190830 12:03:53.480"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:00.977" starttime="20190830 12:04:00.975"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:00.977" starttime="20190830 12:03:53.478"></status>
+</kw>
+<kw name="UNCONFIGURE evpn" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${unconfig_evpn_template}</arg>
+<arg>${R2_evpn_data}</arg>
+</arguments>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:07.883" level="INFO">config term
+
+Fri Aug 30 12:07:01.692 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#no evpn evi 3551
+
+RP/0/RP0/CPU0:ar3.BLB(config)#
+commit
+
+Fri Aug 30 12:07:05.062 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:04:07.883" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:07:05.062 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:04:07.883" starttime="20190830 12:04:00.980"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:07.884" starttime="20190830 12:04:07.883"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:07.884" starttime="20190830 12:04:00.977"></status>
+</kw>
+<kw name="UNCONFIGURE l2vpn" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${PORT_R1_to_R2_1}.${sub_interface_1}</arg>
+<arg>${unconfig_l2vpn_template}</arg>
+<arg>${R1_l2vpn_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>attch_ckt_intf=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:07.886" starttime="20190830 12:04:07.886"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:15.063" level="INFO">config term
+
+Fri Aug 30 06:34:08.127 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#no l2vpn xconnect group LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar10.BLB(config)#
+commit
+
+Fri Aug 30 06:34:11.558 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:04:15.064" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:34:11.558 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:04:15.064" starttime="20190830 12:04:07.886"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:15.064" starttime="20190830 12:04:15.064"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:15.065" starttime="20190830 12:04:07.884"></status>
+</kw>
+<kw name="UNCONFIGURE l2vpn" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${PORT_R2_to_R1_1}.${sub_interface_1}</arg>
+<arg>${unconfig_l2vpn_template}</arg>
+<arg>${R2_l2vpn_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>attch_ckt_intf=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:15.066" starttime="20190830 12:04:15.066"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:21.951" level="INFO">config term
+
+Fri Aug 30 12:07:15.787 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#no l2vpn xconnect group LON_LON_LE-500121
+
+RP/0/RP0/CPU0:ar3.BLB(config)#
+commit
+
+Fri Aug 30 12:07:19.131 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:04:21.951" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:07:19.131 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:04:21.951" starttime="20190830 12:04:15.066"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:21.952" starttime="20190830 12:04:21.952"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:21.952" starttime="20190830 12:04:15.065"></status>
+</kw>
+<kw name="UNCONFIGURE SUB-INTERFACE" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${PORT_R1_to_R2_1}.${sub_interface_1}</arg>
+<arg>${unconfig_sub_interface_template}</arg>
+<arg>${R1_sub_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>sub_interface=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:21.954" starttime="20190830 12:04:21.953"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:29.309" level="INFO">config term
+
+Fri Aug 30 06:34:22.198 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#no interface tenGigE0/0/0/30.4095
+
+RP/0/RP0/CPU0:ar10.BLB(config)#
+commit
+
+Fri Aug 30 06:34:25.622 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:04:29.309" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:34:25.622 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:04:29.309" starttime="20190830 12:04:21.954"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:29.310" starttime="20190830 12:04:29.310"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:29.310" starttime="20190830 12:04:21.952"></status>
+</kw>
+<kw name="UNCONFIGURE SUB-INTERFACE" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${PORT_R2_to_R1_1}.${sub_interface_1}</arg>
+<arg>${unconfig_sub_interface_template}</arg>
+<arg>${R2_sub_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>sub_interface=${sub_intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:29.312" starttime="20190830 12:04:29.312"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:36.193" level="INFO">config term
+
+Fri Aug 30 12:07:30.031 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#no interface tenGigE0/0/0/30.4095
+
+RP/0/RP0/CPU0:ar3.BLB(config)#
+commit
+
+Fri Aug 30 12:07:33.375 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:04:36.194" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:07:33.375 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#</msg>
+<status status="PASS" endtime="20190830 12:04:36.194" starttime="20190830 12:04:29.313"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:36.196" starttime="20190830 12:04:36.194"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:36.196" starttime="20190830 12:04:29.311"></status>
+</kw>
+<kw name="UNCONFIGURE INTERFACE" library="Resource">
+<arguments>
+<arg>${R1_net_connect}</arg>
+<arg>${PORT_R1_to_R2_1}</arg>
+<arg>${unconfig_interface_template}</arg>
+<arg>${R1_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>interface=${intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:36.199" starttime="20190830 12:04:36.198"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:45.767" level="INFO">config term
+
+Fri Aug 30 06:34:36.456 UTC
+RP/0/RP0/CPU0:ar10.BLB(config)#
+
+RP/0/RP0/CPU0:ar10.BLB(config)#interface tenGigE0/0/0/30
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# no description ABC123IfType[Access] LinkID[LON/LON/LE-500121-LA]
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# no mtu 9100
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# no service-policy output Infra-Egress account user-defined 26
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# no load-interval 30
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)# no ethernet loopback
+
+RP/0/RP0/CPU0:ar10.BLB(config-if)#
+commit
+
+Fri Aug 30 06:34:42.080 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-if)#
+end
+
+RP/0/RP0/CPU0:ar10.BLB#</msg>
+<msg timestamp="20190830 12:04:45.767" level="INFO">${commit_result} = commit
+
+Fri Aug 30 06:34:42.080 UTC
+RP/0/RP0/CPU0:ar10.BLB(config-if)#</msg>
+<status status="PASS" endtime="20190830 12:04:45.767" starttime="20190830 12:04:36.200"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:45.768" starttime="20190830 12:04:45.767"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:45.768" starttime="20190830 12:04:36.197"></status>
+</kw>
+<kw name="UNCONFIGURE INTERFACE" library="Resource">
+<arguments>
+<arg>${R2_net_connect}</arg>
+<arg>${PORT_R2_to_R1_1}</arg>
+<arg>${unconfig_interface_template}</arg>
+<arg>${R2_interface_data}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${template_data}</arg>
+<arg>interface=${intf_name}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:45.769" starttime="20190830 12:04:45.768"></status>
+</kw>
+<kw name="Configure Commands" library="Commands">
+<arguments>
+<arg>${connect_id}</arg>
+<arg>template_name=${template_name}</arg>
+<arg>template_data=${template_data}</arg>
+</arguments>
+<assign>
+<var>${commit_result}</var>
+</assign>
+<msg timestamp="20190830 12:04:52.941" level="INFO">config term
+
+Fri Aug 30 12:07:46.481 UTC
+RP/0/RP0/CPU0:ar3.BLB(config)#
+
+RP/0/RP0/CPU0:ar3.BLB(config)#interface tenGigE0/0/0/30
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# no description DEF123IfType[Access] LinkID[LON/LON/LE-500121-LB]
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# no mtu 9100
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# no service-policy output Infra-Egress account user-defined 26
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# no load-interval 30
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)# no ethernet loopback
+
+RP/0/RP0/CPU0:ar3.BLB(config-if)#
+commit
+
+Fri Aug 30 12:07:50.124 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-if)#
+end
+
+RP/0/RP0/CPU0:ar3.BLB#</msg>
+<msg timestamp="20190830 12:04:52.942" level="INFO">${commit_result} = commit
+
+Fri Aug 30 12:07:50.124 UTC
+RP/0/RP0/CPU0:ar3.BLB(config-if)#</msg>
+<status status="PASS" endtime="20190830 12:04:52.942" starttime="20190830 12:04:45.769"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${commit_result}</arg>
+<arg>fail</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:52.943" starttime="20190830 12:04:52.942"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:52.943" starttime="20190830 12:04:45.768"></status>
+</kw>
+<doc>TEST P2P EPL service</doc>
+<tags>
+<tag>p2p</tag>
+</tags>
+<status status="FAIL" endtime="20190830 12:04:52.943" critical="yes" starttime="20190830 12:01:38.232">Several failures occurred:
+
+1) 'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Local MEPs: 1 total: all operational, no errors'
+
+2) 'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Peer MEPs: 1 total: all operational, no errors'
+
+3) 'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Local MEPs: 1 total: all operational, no errors'
+
+4) 'Local_Meps     Peer_Meps
+Local MEPs: 0 total        
+        Peer MEPs: 0 total
+' does not contain 'Peer MEPs: 1 total: all operational, no errors'</status>
+</test>
+<kw type="teardown" name="Teardown Actions" library="Resource">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Teardown Actions done here</arg>
+</arguments>
+<status status="PASS" endtime="20190830 12:04:52.946" starttime="20190830 12:04:52.946"></status>
+</kw>
+<kw name="Close Connection" library="Connect_devices">
+<arguments>
+<arg>${R1_net_connect}</arg>
+</arguments>
+<msg timestamp="20190830 12:04:53.071" level="INFO">&lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042887F0&gt; connection closed</msg>
+<status status="PASS" endtime="20190830 12:04:53.071" starttime="20190830 12:04:52.947"></status>
+</kw>
+<kw name="Close Connection" library="Connect_devices">
+<arguments>
+<arg>${R2_net_connect}</arg>
+</arguments>
+<msg timestamp="20190830 12:04:53.188" level="INFO">&lt;netmiko.cisco.cisco_xr_ssh.CiscoXrSSH object at 0x00000000042ADDA0&gt; connection closed</msg>
+<status status="PASS" endtime="20190830 12:04:53.188" starttime="20190830 12:04:53.071"></status>
+</kw>
+<status status="PASS" endtime="20190830 12:04:53.189" starttime="20190830 12:04:52.945"></status>
+</kw>
+<doc>A test suite with tests for P2P conenctivity.
+Topology:-
+____________________________
+
+
+Testplan Goals:-
+1. CHECK P2P EPL service.</doc>
+<metadata>
+<item name="Version">1.0
+More Info For more information about Robot Framework see http://robotframework.org
+Author Sathishkumar murugesan
+Date 12 Dec 2017
+Executed At HOST
+Test Framework Robot Framework Python</item>
+</metadata>
+<status status="FAIL" endtime="20190830 12:04:53.189" starttime="20190830 12:01:17.204"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">p2p</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="P2P" pass="0">P2P</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
