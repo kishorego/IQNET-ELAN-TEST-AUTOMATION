@@ -11,7 +11,7 @@ from pprint import pprint
 # file_path =  os.path.dirname(os.path.basename(__file__))
 file_path = os.path.dirname(os.path.realpath(__file__))
 def get_spirent_data():
-    with open( file_path + '\..\Topology\Spirent_Test_Topology.yaml') as data_file:
+    with open( file_path + '/../Topology/Spirent_Test_Topology.yaml') as data_file:
         data = yaml.load(data_file,Loader=yaml.FullLoader)
     interface_config = data['sth_interface_config']
     Booked_ports = data['Spirent_Port_Booking']

@@ -12,7 +12,7 @@ import sys
 # file_path =  os.path.dirname(os.path.basename(__file__))
 file_path = os.path.dirname(os.path.realpath(__file__))
 def get_data():
-    with open( file_path + '\..\Topology\EPN_Topology_file.json') as data_file:
+    with open( file_path + '/../Topology/EPN_Topology_file.json') as data_file:
        data = json.load(data_file)
     return data
 
