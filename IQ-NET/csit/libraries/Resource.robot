@@ -2,7 +2,7 @@
 Documentation     Resource file containing all the PYTHON API implementations.
 Library           String
 Library           Collections
-Resource          ${CURDIR}\\Resource.robot    #Resource    Resource.robot
+Resource          ${CURDIR}//Resource.robot    #Resource    Resource.robot
 Library           Connect_devices.py
 Library           Commands.py
 Variables         templates.py
