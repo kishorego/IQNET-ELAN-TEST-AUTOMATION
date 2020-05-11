@@ -79,7 +79,7 @@ def configure_commands(net_connect, **kwargs):
     config_commands = [cmds]
     print(cmds)
     print(device_type)
-    output2 = net_connect.send_config_set(config_commands)
+    output2 = net_connect.send_config_set(config_commands,cmd_verify=False)
     if (device_type != 'Accedian'):
      output2 = net_connect.commit()
      print("Inside Commit")
