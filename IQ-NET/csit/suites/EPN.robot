@@ -44,7 +44,7 @@ EVPN-Creation
     # UNCONFIGURE INTERFACE    ${R1_net_connect}    ${PORT_R1_to_R2_1}    ${unconfig_interface_template}    ${R1_interface_data}
     # UNCONFIGURE INTERFACE    ${R2_net_connect}    ${PORT_R2_to_R1_1}    ${unconfig_interface_template}    ${R2_interface_data}
 
-TEST to Verify VLAN transperancy
+TEST-to-Verify-VLAN-transperancy
     [Documentation]    TEST to Verify VLAN transperancy
     [Tags]    Spirent VLAN Transperancy Traffic Testing For EVPN Service
     Log To Console    entering Spirent Testing
@@ -52,7 +52,7 @@ TEST to Verify VLAN transperancy
     log to console    ${spirent_traffic}
     run keyword and continue on failure    should not contain    ${spirent_traffic}    fail
 
-TEST to Verify MAC transperancy
+TEST-to-Verify-MAC-transperancy
     [Documentation]    TEST to Verify MAC transperancy
     [Tags]    Spirent MAC Transperancy Traffic Testing For EVPN Service
     Log To Console    entering Spirent Testing
