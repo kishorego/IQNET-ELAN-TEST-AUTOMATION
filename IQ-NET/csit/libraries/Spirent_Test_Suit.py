@@ -20,6 +20,10 @@ def get_spirent_data():
     Stream_Name = data['Stream_Names']
     return (Booked_ports, interface_config, Stream_config, Spirent_Test_Infra, Stream_Name)
 
+#########################################################
+# Spirent Fucntion to test traffic for E-VPN service
+#########################################################
+
 def Spirent_EPN_Unicast_Traffic_Testing():
 
 	Booked_ports, Interface_config, Stream_config, Spirent_Test_Infra,Stream_Name = get_spirent_data()
@@ -261,6 +265,7 @@ def Spirent_EPN_Unicast_Traffic_Testing():
 	if (status == '0') :
 		print("run sth.traffic_control failed")
 	#print(traffic_ctrl_ret)
+	print("Test Traffic Stopped now adding delay before collecting stats")
 	time.sleep(60)
 	print("Traffic collection started")
 
@@ -279,35 +284,54 @@ def Spirent_EPN_Unicast_Traffic_Testing():
 	cleanup_sta = sth.cleanup_session(
 		port_handle=[port_handle[0], port_handle[1]],
 		clean_dbfile='1');
-##############################################################
-#Get required values from Stats
-##############################################################
-	Streams_rx_stat = []
-	Streams_tx_stat = []
-	for i in range(1,Number_of_ports+1):
-		Port_Index = 'port'+ str(i)
-		Stream_Index = 'streamblock' + str(i)
-		Streams_rx_stats = traffic_results_ret[Port_Index]['stream'][Stream_Index]['rx']
-		Streams_tx_stats = traffic_results_ret[Port_Index]['stream'][Stream_Index]['tx']
-		Streams_rx_stat.append(int(Streams_rx_stats['total_pkt_bytes']))
-		Streams_tx_stat.append(int(Streams_tx_stats['total_pkt_bytes']))
+	##############################################################
+	# Get required values from Stats
+	##############################################################
 
-	if((Streams_tx_stat[0] == Streams_rx_stat[1]) and (Streams_tx_stat[1] == Streams_rx_stat[0])):
-		print("Great Test Case is passed")
-		print("streamblock1 TX = ", Streams_tx_stat[0], "streamblock1 RX = ", Streams_rx_stat[0], "streamblock2 TX = ",
-		  Streams_tx_stat[1], "streamblock2 RX = ", Streams_rx_stat[1])
-		print("**************Finish***************")
-		return "Spirent Test Result Passed"
-	else:
-		print("Oops Tst Case Failed")
-		print("streamblock1 TX = ", Streams_tx_stat[0], "streamblock1 RX = ", Streams_rx_stat[0], "streamblock2 TX = ",
-		  Streams_tx_stat[1], "streamblock2 RX = ", Streams_rx_stat[1])
-		return "Spirent Test Result Failed"
+	traffic_result = str(traffic_results_ret)
+
+	# regex to get rx, tx and streams from traffic_results_ret
+	RX = '(streamblock\d+)\S+\s+\S+(rx)\S+\s+\S+total_pkt_bytes\S+\s+\S(\d+)'
+	TX = '(streamblock\d+).*?(tx)\S+\s+\S+total_pkt_bytes\S+\s+\S(\d+)'
+
+	StreamBlock = 'streamblock\d+'
+
+	print('Spirent Ports= ' + str(port_list) + '\nTotal Ports= ' + str(len(port_list)))
+	PortStatus = 'Spirent Ports= ' + str(port_list) + '\nTotal Ports= ' + str(len(port_list))
+	StreamBlock = re.findall(StreamBlock, traffic_result)
+	print('Stream Configured= ' + str(StreamBlock) + '\nTotal Streams= ' + str(len(StreamBlock)))
+	StreamStatus = 'Stream Configured= ' + str(StreamBlock) + '\nTotal Streams= ' + str(len(StreamBlock))
+	rx_stats = re.findall(RX, traffic_result)
+	tx_stats = re.findall(TX, traffic_result)
+
+	print('rx_stats= ' + str(rx_stats))
+	print('tx_stats= ' + str(tx_stats))
+
+	stats = 'rx_stats= ' + str(rx_stats) + '\ntx_stats= ' + str(tx_stats)
+
+	StreamResult = []
+
+	for i in range(0, len(StreamBlock)):
+		if rx_stats[i][2] == tx_stats[i][2]:
+			print(str(rx_stats[i][0] + ' = pass'))
+			StreamResult.append('pass')
+
+		else:
+			print(str(rx_stats[i][0] + ' = fail'))
+			StreamResult.append('fail')
+
+	print(str(StreamResult))
+
+	OverallStatus = '\n' + PortStatus + '\n' + StreamStatus + '\n' + stats + '\n' + str(StreamResult)
+	#print(OverallStatus)
+
+	return OverallStatus
 
 #########################################################
-# Spirent Fucntion to test VLAN Transperancy. This function send burst of 15000 packets
+# Spirent Fucntion to test VLAN Transperancy. This function sends burst of 15000 packets
 # on bidiectional stream with verying VLAN from 0 to 4095
 #########################################################
+
 def Spirent_VLAN_Transperancy_Traffic_Testing_For_EVPN_Service():
 	Booked_ports, Interface_config, Stream_config, Spirent_Test_Infra, Stream_Name = get_spirent_data()
 	Number_of_ports = Spirent_Test_Infra['Number_of_ports']
@@ -530,7 +554,7 @@ def Spirent_VLAN_Transperancy_Traffic_Testing_For_EVPN_Service():
 		print("run sth.traffic_control failed")
 	# print(traffic_ctrl_ret)
 	print("Test Traffic Stopped now adding delay before collecting stats")
-	time.sleep(60)
+	time.sleep(70)
 	print("Traffic collection started")
 	##############################################################
 	# start to get the traffic results
@@ -542,7 +566,7 @@ def Spirent_VLAN_Transperancy_Traffic_Testing_For_EVPN_Service():
 	status = traffic_results_ret['status']
 	if (status == '0'):
 		print("run sth.traffic_stats failed")
-	print(traffic_results_ret)
+	pprint(traffic_results_ret)
 	cleanup_sta = sth.cleanup_session(
 		port_handle=[port_handle[0], port_handle[1]],
 		clean_dbfile='1');
@@ -550,28 +574,50 @@ def Spirent_VLAN_Transperancy_Traffic_Testing_For_EVPN_Service():
 	##############################################################
 	# Get required values from Stats
 	##############################################################
-	Streams_rx_stat = []
-	Streams_tx_stat = []
-	for i in range(1, Number_of_ports + 1):
-		Port_Index = 'port' + str(i)
-		Stream_Index = 'streamblock' + str(i)
-		Streams_rx_stats = traffic_results_ret[Port_Index]['stream'][Stream_Index]['rx']
-		Streams_tx_stats = traffic_results_ret[Port_Index]['stream'][Stream_Index]['tx']
-		Streams_rx_stat.append(int(Streams_rx_stats['total_pkts']))
-		Streams_tx_stat.append(int(Streams_tx_stats['total_pkts']))
-	print(" Out of For loop after Stats Collection ")
-	if ((Streams_tx_stat[0] == Streams_rx_stat[1]) and (Streams_tx_stat[1] == Streams_rx_stat[0])):
-		print("Great Test Case is passed")
-		print("streamblock1 TX Packets = ", Streams_tx_stat[0], "streamblock1 RX Packets = ", Streams_rx_stat[0],
-			  "streamblock2 TX Packets= ",
-			  Streams_tx_stat[1], "streamblock2 RX Packets= ", Streams_rx_stat[1])
-		return "Spirent Test Result Passed"
-	else:
-		print("Oops Tst Case Failed")
-		print("streamblock1 TX = ", Streams_tx_stat[0], "streamblock1 RX = ", Streams_rx_stat[0],
-			  "streamblock2 TX = ",
-			  Streams_tx_stat[1], "streamblock2 RX = ", Streams_rx_stat[1])
-		return "Spirent Test Result Failed"
+
+	traffic_result = str(traffic_results_ret)
+
+	# regex to get rx, tx and streams from traffic_results_ret
+	RX = '(streamblock\d+)\S+\s+\S+(rx)\S+\s+\S+total_pkt_bytes\S+\s+\S(\d+)'
+	TX = '(streamblock\d+).*?(tx)\S+\s+\S+total_pkt_bytes\S+\s+\S(\d+)'
+
+	StreamBlock = 'streamblock\d+'
+
+	print('Spirent Ports= ' + str(port_list) + '\nTotal Ports= ' + str(len(port_list)))
+	PortStatus = 'Spirent Ports= ' + str(port_list) + '\nTotal Ports= ' + str(len(port_list))
+	StreamBlock = re.findall(StreamBlock, traffic_result)
+	print('Stream Configured= ' + str(StreamBlock) + '\nTotal Streams= ' + str(len(StreamBlock)))
+	StreamStatus = 'Stream Configured= ' + str(StreamBlock) + '\nTotal Streams= ' + str(len(StreamBlock))
+	rx_stats = re.findall(RX, traffic_result)
+	tx_stats = re.findall(TX, traffic_result)
+
+	print('rx_stats= ' + str(rx_stats))
+	print('tx_stats= ' + str(tx_stats))
+
+	stats = 'rx_stats= ' + str(rx_stats) + '\ntx_stats= ' + str(tx_stats)
+
+	StreamResult = []
+
+	for i in range(0, len(StreamBlock)):
+		if rx_stats[i][2] == tx_stats[i][2]:
+			print(str(rx_stats[i][0] + ' = pass'))
+			StreamResult.append('pass')
+
+		else:
+			print(str(rx_stats[i][0] + ' = fail'))
+			StreamResult.append('fail')
+
+	print(str(StreamResult))
+
+	OverallStatus = '\n' + PortStatus + '\n' + StreamStatus + '\n' + stats + '\n' + str(StreamResult)
+	# print(OverallStatus)
+
+	return OverallStatus
+
+#########################################################
+# Spirent Fucntion to test MAC Transperancy. This function sends traffic with 50 MAC matching
+# bidiectional streams
+#########################################################
 
 def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 	Booked_ports, Interface_config, Stream_config, Spirent_Test_Infra, Stream_Name = get_spirent_data()
@@ -594,6 +640,7 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 		hlt2stcmappingfile='SteamConfig-WithPercentageTraffic_hlt2StcMapping',
 		hlt2stcmapping='1',
 		log_level='7');
+
 	status = test_sta['status']
 	if (status == '0'):
 		print("run sth.test_config failed")
@@ -632,7 +679,7 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 	else:
 		print("\nFailed to retrieve port handle!\n")
 	#		print(port_handle)
-	#print(port_handle)
+	print(port_handle)
 	##############################################################
 	# Spirent Ports configuration
 	##############################################################
@@ -655,7 +702,7 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 		status = int_ret0['status']
 		if (status == '0'):
 			print("run sth.interface_config failed")
-			# print(int_ret0)
+	# print(int_ret0)
 	##############################################################
 	# create traffic
 	##############################################################
@@ -688,7 +735,7 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 		fill_type='constant',
 		fcs_error='0',
 		fill_value='0',
-		frame_size='5000',
+		frame_size='2000',
 		traffic_state='1',
 		high_speed_result_analysis='1',
 		length_mode='fixed',
@@ -704,12 +751,14 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 		rate_mbps='800',
 		mac_discovery_gw='192.85.1.1',
 		enable_stream='false');
+
 	status = streamblock_ret1['status']
 	if (status == '0'):
 		print("run sth.traffic_config failed")
 		print(streamblock_ret1)
 	else:
 		print("***** run sth.traffic_config successfully")
+
 	streamblock_ret2 = sth.traffic_config(
 		mode='create',
 		port_handle=port_handle[1],
@@ -755,14 +804,16 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 		rate_mbps='800',
 		mac_discovery_gw='192.85.1.1',
 		enable_stream='false');
+
 	status = streamblock_ret2['status']
 	if (status == '0'):
 		print("run sth.traffic_config failed")
 		print(streamblock_ret2)
 	else:
 		print("***** run sth.traffic_config successfully")
+
 	# config part is finished
-    #############################################################
+	#############################################################
 	# start traffic
 	##############################################################
 	print("Traffic Started First Time")
@@ -780,14 +831,13 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 	traffic_ctrl_ret = sth.traffic_control(
 		port_handle=[port_handle[0], port_handle[1]],
 		action='run',
-		duration='30');
-	print("Out of Wood")
+		duration='10');
 	status = traffic_ctrl_ret['status']
 	if (status == '0'):
 		print("run sth.traffic_control failed")
 	# print(traffic_ctrl_ret)
 	print("Test Traffic Stopped now adding delay before collecting stats")
-	time.sleep(60)
+	time.sleep(70)
 	print("Traffic collection started")
 	##############################################################
 	# start to get the traffic results
@@ -799,31 +849,50 @@ def Spirent_MAC_Transperancy_Traffic_Testing_For_EVPN_Service():
 	status = traffic_results_ret['status']
 	if (status == '0'):
 		print("run sth.traffic_stats failed")
-	print(traffic_results_ret)
+	pprint(traffic_results_ret)
 	cleanup_sta = sth.cleanup_session(
 		port_handle=[port_handle[0], port_handle[1]],
 		clean_dbfile='1');
+	print("Port Cleanedup")
 	##############################################################
 	# Get required values from Stats
 	##############################################################
-	Streams_rx_stat = []
-	Streams_tx_stat = []
-	for i in range(1, Number_of_ports + 1):
-		Port_Index = 'port' + str(i)
-		Stream_Index = 'streamblock' + str(i)
-		Streams_rx_stats = traffic_results_ret[Port_Index]['stream'][Stream_Index]['rx']
-		Streams_tx_stats = traffic_results_ret[Port_Index]['stream'][Stream_Index]['tx']
-		Streams_rx_stat.append(int(Streams_rx_stats['total_pkts']))
-		Streams_tx_stat.append(int(Streams_tx_stats['total_pkts']))
-	if ((Streams_tx_stat[0] == Streams_rx_stat[1]) and (Streams_tx_stat[1] == Streams_rx_stat[0])):
-		print("Great Test Case is passed")
-		print("streamblock1 TX Packets = ", Streams_tx_stat[0], "streamblock1 RX Packets = ", Streams_rx_stat[0],
-			  "streamblock2 TX Packets= ",
-			  Streams_tx_stat[1], "streamblock2 RX Packets= ", Streams_rx_stat[1])
-		return "Spirent Test Result Passed"
-	else:
-		print("Oops Tst Case Failed")
-		print("streamblock1 TX = ", Streams_tx_stat[0], "streamblock1 RX = ", Streams_rx_stat[0],
-			  "streamblock2 TX = ",
-			  Streams_tx_stat[1], "streamblock2 RX = ", Streams_rx_stat[1])
-		return "Spirent Test Result Failed"
+
+	traffic_result = str(traffic_results_ret)
+
+	# regex to get rx, tx and streams from traffic_results_ret
+	RX = '(streamblock\d+)\S+\s+\S+(rx)\S+\s+\S+total_pkt_bytes\S+\s+\S(\d+)'
+	TX = '(streamblock\d+).*?(tx)\S+\s+\S+total_pkt_bytes\S+\s+\S(\d+)'
+
+	StreamBlock = 'streamblock\d+'
+
+	print('Spirent Ports= ' + str(port_list) + '\nTotal Ports= ' + str(len(port_list)))
+	PortStatus = 'Spirent Ports= ' + str(port_list) + '\nTotal Ports= ' + str(len(port_list))
+	StreamBlock = re.findall(StreamBlock, traffic_result)
+	print('Stream Configured= ' + str(StreamBlock) + '\nTotal Streams= ' + str(len(StreamBlock)))
+	StreamStatus = 'Stream Configured= ' + str(StreamBlock) + '\nTotal Streams= ' + str(len(StreamBlock))
+	rx_stats = re.findall(RX, traffic_result)
+	tx_stats = re.findall(TX, traffic_result)
+
+	print('rx_stats= ' + str(rx_stats))
+	print('tx_stats= ' + str(tx_stats))
+
+	stats = 'rx_stats= ' + str(rx_stats) + '\ntx_stats= ' + str(tx_stats)
+
+	StreamResult = []
+
+	for i in range(0, len(StreamBlock)):
+		if rx_stats[i][2] == tx_stats[i][2]:
+			print(str(rx_stats[i][0] + ' = pass'))
+			StreamResult.append('pass')
+
+		else:
+			print(str(rx_stats[i][0] + ' = fail'))
+			StreamResult.append('fail')
+
+	print(str(StreamResult))
+
+	OverallStatus = '\n' + PortStatus + '\n' + StreamStatus + '\n' + stats + '\n' + str(StreamResult)
+	# print(OverallStatus)
+
+	return OverallStatus
