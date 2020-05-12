@@ -32,10 +32,9 @@ EVPN-Creation
     CONFIGURE evpn    ${R1_net_connect}    ${evpn_template}    ${R1_evpn_data}
     CONFIGURE evpn    ${R2_net_connect}    ${evpn_template}    ${R2_evpn_data}
     Log To Console    entering Spirent Testing
-    ${Spirent_Test_Result}=    Spirent EPN Unicast Traffic Testing
-    Log To Console    Out Of Spirent Testing
-    Log To Console    ${Spirent_Test_Result}
-    should be equal    ${Spirent_Test_Result}    Spirent Test Result Passed
+    ${spirent_traffic}=    Spirent EPN Unicast Traffic Testing
+    log to console    ${spirent_traffic}
+    run keyword and continue on failure    should not contain    ${spirent_traffic}    fail
     #UNCONFIGURE evpn    ${R1_net_connect}    ${unconfig_evpn_template}    ${R1_l2vpn_data}
     #UNCONFIGURE evpn    ${R2_net_connect}    ${unconfig_evpn_template}    ${R2_l2vpn_data}
     #UNCONFIGURE l2vpn    ${R1_net_connect}    ${unconfig_l2vpn_template}    ${R1_l2vpn_data}
@@ -48,16 +47,18 @@ EVPN-Creation
 TEST to Verify VLAN transperancy
     [Documentation]    TEST to Verify VLAN transperancy
     [Tags]    Spirent VLAN Transperancy Traffic Testing For EVPN Service
-    ${Spirent_Test_Result}=    Spirent VLAN Transperancy Traffic Testing For EVPN Service
-    Log To Console    ${Spirent_Test_Result}
-    should be equal    ${Spirent_Test_Result}    Spirent Test Result Passed
+    Log To Console    entering Spirent Testing
+    ${spirent_traffic}=    Spirent VLAN Transperancy Traffic Testing For EVPN Service
+    log to console    ${spirent_traffic}
+    run keyword and continue on failure    should not contain    ${spirent_traffic}    fail
 
 TEST to Verify MAC transperancy
     [Documentation]    TEST to Verify MAC transperancy
     [Tags]    Spirent MAC Transperancy Traffic Testing For EVPN Service
-    ${Spirent_Test_Result}=    Spirent MAC Transperancy Traffic Testing For EVPN Service
-    Log To Console    ${Spirent_Test_Result}
-    should be equal    ${Spirent_Test_Result}    Spirent Test Result Passed
+    Log To Console    entering Spirent Testing
+    ${spirent_traffic}=    Spirent MAC Transperancy Traffic Testing For EVPN Service
+    log to console    ${spirent_traffic}
+    run keyword and continue on failure    should not contain    ${spirent_traffic}    fail
 
 Test Addition of Site to Exiting EVPN service
     [Documentation]    Test Addition of Site Exiting EVPN service
